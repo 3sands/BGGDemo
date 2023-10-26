@@ -8,6 +8,11 @@
 import Foundation
 
 public enum CustomErrors: Error {
+    case cannotConvertSearchResultIntoXMLString
+    case cannotConvertSearchIdsResultIntoXMLString
     case wrongSearchURL
+    case missingSearchForQueryURL
+    case missingSearchForIdsURL
     case wrongDataFromSearch
+    case cannotGetTypeFromXML
 }

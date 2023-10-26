@@ -7,259 +7,6 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "8E959988-9811-4244-9A7C-611F6878195B"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "BGGDemoNetworking/Sources/BGGDemoNetworking/BGGDemoNetworking.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "29"
-            endingLineNumber = "29"
-            landmarkName = "search(geeksite:forQuery:)"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "8E959988-9811-4244-9A7C-611F6878195B - ae1175924848c1cc"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "(3) suspend resume partial function for BGGDemoNetworking.BGGNetworker.search(for: Swift.String) async -&gt; Swift.Result&lt;Swift.Array&lt;BGGDemoUtilities.BoardGame&gt;, Swift.Error&gt;"
-                  moduleName = "BGGDemo"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/trey/ios/BGGDemo/BGGDemoNetworking/Sources/BGGDemoNetworking/BGGDemoNetworking.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "28"
-                  endingLineNumber = "28"
-                  offsetFromSymbolStart = "312">
-               </Location>
-               <Location
-                  uuid = "8E959988-9811-4244-9A7C-611F6878195B - 93a00248e27ff358"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "(3) suspend resume partial function for BGGDemoNetworking.BGGNetworker.search(geeksite: BGGDemoUtilities.GeekSite, forQuery: Swift.String) async throws -&gt; Swift.Array&lt;BGGDemoUtilities.BGGThing&gt;"
-                  moduleName = "BGGDemo"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/trey/ios/BGGDemo/BGGDemoNetworking/Sources/BGGDemoNetworking/BGGDemoNetworking.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "29"
-                  endingLineNumber = "29"
-                  offsetFromSymbolStart = "452">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "865F15AB-844A-4A45-9BEE-D44486D34AC8"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "BGGDemoNetworking/Sources/BGGDemoNetworking/BGGDemoNetworking.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "26"
-            endingLineNumber = "26"
-            landmarkName = "search(geeksite:forQuery:)"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "865F15AB-844A-4A45-9BEE-D44486D34AC8 - ae1175924848c1a9"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "(3) suspend resume partial function for BGGDemoNetworking.BGGNetworker.search(for: Swift.String) async -&gt; Swift.Result&lt;Swift.Array&lt;BGGDemoUtilities.BoardGame&gt;, Swift.Error&gt;"
-                  moduleName = "BGGDemo"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/trey/ios/BGGDemo/BGGDemoNetworking/Sources/BGGDemoNetworking/BGGDemoNetworking.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "25"
-                  endingLineNumber = "25"
-                  offsetFromSymbolStart = "1052">
-               </Location>
-               <Location
-                  uuid = "865F15AB-844A-4A45-9BEE-D44486D34AC8 - 93a00248e27ff2fb"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "(3) suspend resume partial function for BGGDemoNetworking.BGGNetworker.search(geeksite: BGGDemoUtilities.GeekSite, forQuery: Swift.String) async throws -&gt; Swift.Array&lt;BGGDemoUtilities.BGGThing&gt;"
-                  moduleName = "BGGDemo"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/trey/ios/BGGDemo/BGGDemoNetworking/Sources/BGGDemoNetworking/BGGDemoNetworking.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "26"
-                  endingLineNumber = "26"
-                  offsetFromSymbolStart = "3088">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "1DCB4D8A-C715-4F53-8120-932B7B927B2D"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "BGGDemoNetworking/Sources/BGGDemoNetworking/BGGDemoNetworking.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "49"
-            endingLineNumber = "49"
-            landmarkName = "search(geeksite:forQuery:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "75118642-D73C-4EDC-A33A-F438FF2A569D"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "BGGDemoNetworking/Sources/BGGDemoNetworking/BGGDemoNetworking.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "43"
-            endingLineNumber = "43"
-            landmarkName = "search(geeksite:forQuery:)"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "75118642-D73C-4EDC-A33A-F438FF2A569D - d414ffc4262ae573"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "(3) suspend resume partial function for BGGDemoNetworking.BGGNetworker.searchBoardGames(for: Swift.String) async -&gt; Swift.Result&lt;Swift.Array&lt;BGGDemoUtilities.BoardGame&gt;, Swift.Error&gt;"
-                  moduleName = "BGGDemo"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/trey/ios/BGGDemo/BGGDemoNetworking/Sources/BGGDemoNetworking/BGGDemoNetworking.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "39"
-                  endingLineNumber = "39"
-                  offsetFromSymbolStart = "2604">
-               </Location>
-               <Location
-                  uuid = "75118642-D73C-4EDC-A33A-F438FF2A569D - 6175a958939c590a"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "(4) await resume partial function for BGGDemoNetworking.BGGNetworker.searchBoardGames(for: Swift.String) async -&gt; Swift.Result&lt;Swift.Array&lt;BGGDemoUtilities.BoardGame&gt;, Swift.Error&gt;"
-                  moduleName = "BGGDemo"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/trey/ios/BGGDemo/BGGDemoNetworking/Sources/BGGDemoNetworking/BGGDemoNetworking.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "39"
-                  endingLineNumber = "39"
-                  offsetFromSymbolStart = "52">
-               </Location>
-               <Location
-                  uuid = "75118642-D73C-4EDC-A33A-F438FF2A569D - e73478164370396d"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "(5) suspend resume partial function for BGGDemoNetworking.BGGNetworker.searchBoardGames(for: Swift.String) async -&gt; Swift.Result&lt;Swift.Array&lt;BGGDemoUtilities.BoardGame&gt;, Swift.Error&gt;"
-                  moduleName = "BGGDemo"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/trey/ios/BGGDemo/BGGDemoNetworking/Sources/BGGDemoNetworking/BGGDemoNetworking.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "39"
-                  endingLineNumber = "39"
-                  offsetFromSymbolStart = "204">
-               </Location>
-               <Location
-                  uuid = "75118642-D73C-4EDC-A33A-F438FF2A569D - 3653e220fdd77d6f"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "(7) suspend resume partial function for BGGDemoNetworking.BGGNetworker.searchBoardGames(for: Swift.String) async -&gt; Swift.Result&lt;Swift.Array&lt;BGGDemoUtilities.BoardGame&gt;, Swift.Error&gt;"
-                  moduleName = "BGGDemo"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/trey/ios/BGGDemo/BGGDemoNetworking/Sources/BGGDemoNetworking/BGGDemoNetworking.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "39"
-                  endingLineNumber = "39"
-                  offsetFromSymbolStart = "108">
-               </Location>
-               <Location
-                  uuid = "75118642-D73C-4EDC-A33A-F438FF2A569D - 93a00248e27ff0cd"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "(3) suspend resume partial function for BGGDemoNetworking.BGGNetworker.search(geeksite: BGGDemoUtilities.GeekSite, forQuery: Swift.String) async throws -&gt; Swift.Array&lt;BGGDemoUtilities.BGGThing&gt;"
-                  moduleName = "BGGDemo"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/trey/ios/BGGDemo/BGGDemoNetworking/Sources/BGGDemoNetworking/BGGDemoNetworking.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "40"
-                  endingLineNumber = "40"
-                  offsetFromSymbolStart = "2860">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "F4604BF3-0F4D-4F7E-919F-82CC00092E44"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "BGGDemoNetworking/Sources/BGGDemoNetworking/BGGDemoNetworking.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "40"
-            endingLineNumber = "40"
-            landmarkName = "search(geeksite:forQuery:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "EA7C3860-AC73-4BF2-8CFC-FA9697973C15"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "BGGDemoNetworking/Sources/BGGDemoNetworking/BGGDemoNetworking.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "60"
-            endingLineNumber = "60"
-            landmarkName = "deserialize(_:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "BC07A566-1983-4FED-86EE-366CAFDEAB4D"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "BGGDemoNetworking/Sources/BGGDemoNetworking/BGGDemoNetworking.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "20"
-            endingLineNumber = "20"
-            landmarkName = "search(geeksite:forQuery:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
             uuid = "E890A2E1-A3CC-4F85-B2F6-908976D1C470"
             shouldBeEnabled = "No"
             ignoreCount = "0"
@@ -318,6 +65,385 @@
             startingLineNumber = "49"
             endingLineNumber = "49"
             landmarkName = "init()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "8E3CDFBA-93D1-437F-97F0-B8CD8E2C0700"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "BGGDemoNetworking/Sources/BGGDemoNetworking/BGGDemoNetworking.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "18"
+            endingLineNumber = "18"
+            landmarkName = "search(geeksite:forQuery:withStats:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "94CD9EFF-44C4-44CF-B84D-45B196E99DFD"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "BGGDemoNetworking/Sources/BGGDemoNetworking/BGGDemoNetworking.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "24"
+            endingLineNumber = "24"
+            landmarkName = "search(geeksite:forQuery:withStats:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "AA7B72FE-C99A-4874-8E81-1317E130DFE3"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "BGGDemoNetworking/Sources/BGGDemoNetworking/BGGDemoNetworking.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "40"
+            endingLineNumber = "40"
+            landmarkName = "search(geeksite:forQuery:withStats:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "7B7B8EB6-CE25-4BF0-8DC8-DBFA4CFB2532"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "BGGDemoNetworking/Sources/BGGDemoNetworking/BGGDemoNetworking.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "45"
+            endingLineNumber = "45"
+            landmarkName = "search(geeksite:forQuery:withStats:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "F89E4244-7ED6-44D6-9137-80049E087050"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "BGGDemoNetworking/Sources/BGGDemoNetworking/BGGDemoNetworking.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "51"
+            endingLineNumber = "51"
+            landmarkName = "search(geeksite:forQuery:withStats:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "6FE2F057-EA85-4F97-B21F-2A6A51CEA654"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "BGGDemoNetworking/Sources/BGGDemoNetworking/BGGDemoNetworking.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "20"
+            endingLineNumber = "20"
+            landmarkName = "search(geeksite:forQuery:withStats:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "6FE2F057-EA85-4F97-B21F-2A6A51CEA654 - 8c5f6d6f5ea265e"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(1) suspend resume partial function for BGGDemoNetworking.BGGNetworker.search(geeksite: BGGDemoUtilities.GeekSite, forQuery: Swift.String) async throws -&gt; Swift.Array&lt;BGGDemoUtilities.BGGThing&gt;"
+                  moduleName = "BGGDemo"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/trey/ios/BGGDemo/BGGDemoNetworking/Sources/BGGDemoNetworking/BGGDemoNetworking.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "21"
+                  endingLineNumber = "21"
+                  offsetFromSymbolStart = "308">
+               </Location>
+               <Location
+                  uuid = "6FE2F057-EA85-4F97-B21F-2A6A51CEA654 - 568bbe74909cb0c9"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(2) await resume partial function for BGGDemoNetworking.BGGNetworker.search(geeksite: BGGDemoUtilities.GeekSite, forQuery: Swift.String) async throws -&gt; Swift.Array&lt;BGGDemoUtilities.BGGThing&gt;"
+                  moduleName = "BGGDemo"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/trey/ios/BGGDemo/BGGDemoNetworking/Sources/BGGDemoNetworking/BGGDemoNetworking.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "21"
+                  endingLineNumber = "21"
+                  offsetFromSymbolStart = "52">
+               </Location>
+               <Location
+                  uuid = "6FE2F057-EA85-4F97-B21F-2A6A51CEA654 - 93a00248e27ff240"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(3) suspend resume partial function for BGGDemoNetworking.BGGNetworker.search(geeksite: BGGDemoUtilities.GeekSite, forQuery: Swift.String) async throws -&gt; Swift.Array&lt;BGGDemoUtilities.BGGThing&gt;"
+                  moduleName = "BGGDemo"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/trey/ios/BGGDemo/BGGDemoNetworking/Sources/BGGDemoNetworking/BGGDemoNetworking.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "21"
+                  endingLineNumber = "21"
+                  offsetFromSymbolStart = "168">
+               </Location>
+               <Location
+                  uuid = "6FE2F057-EA85-4F97-B21F-2A6A51CEA654 - 26e895a9d9cda44f"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(6) suspend resume partial function for BGGDemoNetworking.BGGNetworker.search(geeksite: BGGDemoUtilities.GeekSite, forQuery: Swift.String) async throws -&gt; Swift.Array&lt;BGGDemoUtilities.BGGThing&gt;"
+                  moduleName = "BGGDemo"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/trey/ios/BGGDemo/BGGDemoNetworking/Sources/BGGDemoNetworking/BGGDemoNetworking.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "21"
+                  endingLineNumber = "21"
+                  offsetFromSymbolStart = "44">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "E3AB2CA6-85BF-47DE-BC73-1CEA5EEB825B"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "BGGDemoNetworking/Sources/BGGDemoNetworking/BGGDemoNetworking.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "22"
+            endingLineNumber = "22"
+            landmarkName = "search(geeksite:forQuery:withStats:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "E3AB2CA6-85BF-47DE-BC73-1CEA5EEB825B - 93a00248e27ff21e"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(3) suspend resume partial function for BGGDemoNetworking.BGGNetworker.search(geeksite: BGGDemoUtilities.GeekSite, forQuery: Swift.String) async throws -&gt; Swift.Array&lt;BGGDemoUtilities.BGGThing&gt;"
+                  moduleName = "BGGDemo"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/trey/ios/BGGDemo/BGGDemoNetworking/Sources/BGGDemoNetworking/BGGDemoNetworking.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "23"
+                  endingLineNumber = "23"
+                  offsetFromSymbolStart = "264">
+               </Location>
+               <Location
+                  uuid = "E3AB2CA6-85BF-47DE-BC73-1CEA5EEB825B - 1b7b1fe2d0f38e14"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(5) suspend resume partial function for BGGDemoNetworking.BGGNetworker.search(geeksite: BGGDemoUtilities.GeekSite, forQuery: Swift.String) async throws -&gt; Swift.Array&lt;BGGDemoUtilities.BGGThing&gt;"
+                  moduleName = "BGGDemo"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/trey/ios/BGGDemo/BGGDemoNetworking/Sources/BGGDemoNetworking/BGGDemoNetworking.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "23"
+                  endingLineNumber = "23"
+                  offsetFromSymbolStart = "556">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "2CD7CD4C-2268-4156-BB84-5867812DA325"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "BGGDemoNetworking/Sources/BGGDemoNetworking/BGGDemoNetworking.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "26"
+            endingLineNumber = "26"
+            landmarkName = "search(geeksite:forQuery:withStats:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "B9AAFF79-6536-4632-89D9-2939CA6AA84E"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "BGGDemoNetworking/Sources/BGGDemoNetworking/BGGDemoNetworking.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "28"
+            endingLineNumber = "28"
+            landmarkName = "search(geeksite:forQuery:withStats:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "CED80C9E-9F06-4792-B038-8D41A0C2034B"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "BGGDemoNetworking/Sources/BGGDemoNetworking/BGGDemoNetworking.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "35"
+            endingLineNumber = "35"
+            landmarkName = "search(geeksite:forQuery:withStats:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "81A15878-7314-4BFE-AD06-E6B87163D8CB"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "BGGDemoNetworking/Sources/BGGDemoNetworking/BGGDemoNetworking.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "42"
+            endingLineNumber = "42"
+            landmarkName = "search(geeksite:forQuery:withStats:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "81A15878-7314-4BFE-AD06-E6B87163D8CB - 93a00248e27ff08b"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(3) suspend resume partial function for BGGDemoNetworking.BGGNetworker.search(geeksite: BGGDemoUtilities.GeekSite, forQuery: Swift.String) async throws -&gt; Swift.Array&lt;BGGDemoUtilities.BGGThing&gt;"
+                  moduleName = "BGGDemo"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/trey/ios/BGGDemo/BGGDemoNetworking/Sources/BGGDemoNetworking/BGGDemoNetworking.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "42"
+                  endingLineNumber = "42"
+                  offsetFromSymbolStart = "1196">
+               </Location>
+               <Location
+                  uuid = "81A15878-7314-4BFE-AD06-E6B87163D8CB - 3de85450cd63f604"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(4) await resume partial function for BGGDemoNetworking.BGGNetworker.search(geeksite: BGGDemoUtilities.GeekSite, forQuery: Swift.String) async throws -&gt; Swift.Array&lt;BGGDemoUtilities.BGGThing&gt;"
+                  moduleName = "BGGDemo"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/trey/ios/BGGDemo/BGGDemoNetworking/Sources/BGGDemoNetworking/BGGDemoNetworking.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "42"
+                  endingLineNumber = "42"
+                  offsetFromSymbolStart = "52">
+               </Location>
+               <Location
+                  uuid = "81A15878-7314-4BFE-AD06-E6B87163D8CB - 1b7b1fe2d0f38c81"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(5) suspend resume partial function for BGGDemoNetworking.BGGNetworker.search(geeksite: BGGDemoUtilities.GeekSite, forQuery: Swift.String) async throws -&gt; Swift.Array&lt;BGGDemoUtilities.BGGThing&gt;"
+                  moduleName = "BGGDemo"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/trey/ios/BGGDemo/BGGDemoNetworking/Sources/BGGDemoNetworking/BGGDemoNetworking.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "42"
+                  endingLineNumber = "42"
+                  offsetFromSymbolStart = "164">
+               </Location>
+               <Location
+                  uuid = "81A15878-7314-4BFE-AD06-E6B87163D8CB - 62562b94de875887"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(7) suspend resume partial function for BGGDemoNetworking.BGGNetworker.search(geeksite: BGGDemoUtilities.GeekSite, forQuery: Swift.String) async throws -&gt; Swift.Array&lt;BGGDemoUtilities.BGGThing&gt;"
+                  moduleName = "BGGDemo"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/trey/ios/BGGDemo/BGGDemoNetworking/Sources/BGGDemoNetworking/BGGDemoNetworking.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "42"
+                  endingLineNumber = "42"
+                  offsetFromSymbolStart = "84">
+               </Location>
+               <Location
+                  uuid = "81A15878-7314-4BFE-AD06-E6B87163D8CB - 62562b94de875887"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(7) suspend resume partial function for BGGDemoNetworking.BGGNetworker.search(geeksite: BGGDemoUtilities.GeekSite, forQuery: Swift.String) async throws -&gt; Swift.Array&lt;BGGDemoUtilities.BGGThing&gt;"
+                  moduleName = "BGGDemo"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/trey/ios/BGGDemo/BGGDemoNetworking/Sources/BGGDemoNetworking/BGGDemoNetworking.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "42"
+                  endingLineNumber = "42"
+                  offsetFromSymbolStart = "88">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "DE9EE903-89C6-4365-AFEF-762E3EDC4C56"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "BGGDemoNetworking/Sources/BGGDemoNetworking/BGGDemoNetworking.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "50"
+            endingLineNumber = "50"
+            landmarkName = "search(geeksite:forQuery:withStats:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "0CC458DF-D5F5-4BC2-8622-FA6D8D60D48C"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "BGGDemoNetworking/Sources/BGGDemoNetworking/BGGDemoNetworking.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "48"
+            endingLineNumber = "48"
+            landmarkName = "search(geeksite:forQuery:withStats:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

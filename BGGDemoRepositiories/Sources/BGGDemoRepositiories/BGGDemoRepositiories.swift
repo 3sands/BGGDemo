@@ -19,7 +19,7 @@ public final class BGGDemoRepositiories {
 ////        return .success([])
 //    }
     
-    public func bggItems(from geekSite: GeekSite, forSearchQuery query: String) async throws -> [BGGThing] {
-        return try await networking.search(geeksite: geekSite, forQuery: query)
+    public func bggItems(from geekSite: GeekSite, forSearchQuery query: String, withStats: Bool) async throws -> [BGGThing] {
+        return try await networking.search(geeksite: geekSite, forQuery: query, withStats: withStats)
     }
 }

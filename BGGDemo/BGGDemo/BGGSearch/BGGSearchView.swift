@@ -53,18 +53,16 @@ struct BGGSearchView: View {
                 Text("Searching for \(viewModel.searchTerm)")
                 
             case .results(let array):
-                Text("results are \(array.count)")
-                VStack {
-                    ForEach(array) { thing in
-                        switch thing {
-                        case .boardGame(let game):
-                            BoardGameSearchResultCell(game)
-                        default:
-                            Text("NOOOPE")
-                        }
+                Text("Results: \(array.count)")
+                List(array) {
+                    switch $0 {
+                    case .boardGame(let game):
+                        BoardGameSearchResultCell(game)
+                    default:
+                        Text("NOOOPE")
                     }
                 }
-                Spacer()
+                .ignoresSafeArea()
             case .error:
                 Text("Error")
             }

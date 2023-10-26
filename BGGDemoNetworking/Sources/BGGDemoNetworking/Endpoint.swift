@@ -27,20 +27,20 @@ extension Endpoint {
     }
     
     static func searchForIds(geekSite: GeekSite,
-                             idString: String) -> Endpoint {
+                             idString: String,
+                             withStats: Bool) -> Endpoint {
         return Endpoint(
             geekSite: geekSite,
             path: "/xmlapi2/thing",
             queryItems: [
-                URLQueryItem(name: "id", value: idString)
+                URLQueryItem(name: "id", value: idString),
+                URLQueryItem(name: "stats", value: withStats ? "1" : nil)
             ]
         )
     }
 }
 
 extension Endpoint {
-    // We still have to keep 'url' as an optional, since we're
-    // dealing with dynamic components that could be invalid.
     var url: URL? {
         var components = URLComponents()
         components.scheme = "https"

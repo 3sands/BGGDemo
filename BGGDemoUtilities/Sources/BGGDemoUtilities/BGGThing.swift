@@ -12,10 +12,11 @@ import Foundation
 public enum BGGThing: Identifiable {
     case boardGame(BoardGame)
     case boardGameExpansion // TODO: AssociaatedStruct
-    case boardGamAaccessory // TODO: Struct
+    case boardGameAaccessory // TODO: Struct
     case videoGame // TODO
     case rpgItem
     case rpgIssue // (for periodicals)
+    case unknown
     
     public var id: Int {
         switch self {

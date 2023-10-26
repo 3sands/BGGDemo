@@ -12,10 +12,6 @@ import BGGDemoRepositiories
 import BGGDemoUtilities
 import BGGDemoUIComponents
 
-let previewBoardGame = BoardGame(id: 123456,
-                                 titles: ["Agricoli", "Agricola"],
-                                 mainTitle: "Agricola")
-
 let previewBGGThings: [BGGThing] = [.boardGame(previewBoardGame)]
 
 class BGGSearchViewModel: ObservableObject {
@@ -32,7 +28,6 @@ class BGGSearchViewModel: ObservableObject {
         case error
     }
     
-    
     init(initialData: [BGGThing]? = nil) {
         $searchTerm
             .debounce(for: .milliseconds(300),
@@ -43,9 +38,12 @@ class BGGSearchViewModel: ObservableObject {
                 Future { promise in
                     Task {
                         do {
-                            let result = try await self.repo.bggItems(from: .boardGame, forSearchQuery: query)
+                            let result = try await self.repo.bggItems(from: .boardGame, 
+                                                                      forSearchQuery: query,
+                                                                      withStats: true)
                             promise(.success(result))
                         } catch {
+                            print("🦄 \(error)")
                             promise(.success([]))
                         }
                     }
