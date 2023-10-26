@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workspace
+   version = "1.0">
+   <FileRef
+      location = "group:BGGDemoUIComponents">
+   </FileRef>
+   <FileRef
+      location = "group:BGGDemoRepositiories">
+   </FileRef>
+   <FileRef
+      location = "group:/Users/trey/ios/BGGDemo/BGGDemoUtilities">
+   </FileRef>
+   <FileRef
+      location = "group:BGGDemo/BGGDemo.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:/Users/trey/ios/BGGDemo/BGGDemoNetworking">
+   </FileRef>
+</Workspace>
