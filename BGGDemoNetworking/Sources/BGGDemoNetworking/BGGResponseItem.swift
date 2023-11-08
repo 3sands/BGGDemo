@@ -8,8 +8,14 @@
 import Foundation
 
 /// BGG Search Response returns only a small amount of data for each item
-struct BGGSearchResponseItem {
-    let id: Int
-    let name: String
-    let yearPublished: Int?
+public struct BGGSearchResponseItem {
+    public let id: Int
+    public let name: String
+    public let yearPublished: Int?
+    public let type: String
+}
+
+public struct BGGSearchResponse {
+    public let query: String
+    public let items: [BGGSearchResponseItem]
 }

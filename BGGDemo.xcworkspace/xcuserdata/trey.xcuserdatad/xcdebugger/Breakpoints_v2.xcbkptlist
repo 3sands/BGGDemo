@@ -78,8 +78,8 @@
             filePath = "BGGDemoNetworking/Sources/BGGDemoNetworking/BGGDemoNetworking.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "18"
-            endingLineNumber = "18"
+            startingLineNumber = "66"
+            endingLineNumber = "66"
             landmarkName = "search(geeksite:forQuery:withStats:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -94,8 +94,8 @@
             filePath = "BGGDemoNetworking/Sources/BGGDemoNetworking/BGGDemoNetworking.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "24"
-            endingLineNumber = "24"
+            startingLineNumber = "72"
+            endingLineNumber = "72"
             landmarkName = "search(geeksite:forQuery:withStats:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -110,8 +110,8 @@
             filePath = "BGGDemoNetworking/Sources/BGGDemoNetworking/BGGDemoNetworking.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "40"
-            endingLineNumber = "40"
+            startingLineNumber = "91"
+            endingLineNumber = "91"
             landmarkName = "search(geeksite:forQuery:withStats:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -126,8 +126,8 @@
             filePath = "BGGDemoNetworking/Sources/BGGDemoNetworking/BGGDemoNetworking.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "45"
-            endingLineNumber = "45"
+            startingLineNumber = "96"
+            endingLineNumber = "96"
             landmarkName = "search(geeksite:forQuery:withStats:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -142,8 +142,8 @@
             filePath = "BGGDemoNetworking/Sources/BGGDemoNetworking/BGGDemoNetworking.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "51"
-            endingLineNumber = "51"
+            startingLineNumber = "102"
+            endingLineNumber = "102"
             landmarkName = "search(geeksite:forQuery:withStats:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -158,8 +158,8 @@
             filePath = "BGGDemoNetworking/Sources/BGGDemoNetworking/BGGDemoNetworking.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "20"
-            endingLineNumber = "20"
+            startingLineNumber = "68"
+            endingLineNumber = "68"
             landmarkName = "search(geeksite:forQuery:withStats:)"
             landmarkType = "7">
             <Locations>
@@ -236,8 +236,8 @@
             filePath = "BGGDemoNetworking/Sources/BGGDemoNetworking/BGGDemoNetworking.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "22"
-            endingLineNumber = "22"
+            startingLineNumber = "70"
+            endingLineNumber = "70"
             landmarkName = "search(geeksite:forQuery:withStats:)"
             landmarkType = "7">
             <Locations>
@@ -284,8 +284,8 @@
             filePath = "BGGDemoNetworking/Sources/BGGDemoNetworking/BGGDemoNetworking.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "26"
-            endingLineNumber = "26"
+            startingLineNumber = "74"
+            endingLineNumber = "74"
             landmarkName = "search(geeksite:forQuery:withStats:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -300,8 +300,8 @@
             filePath = "BGGDemoNetworking/Sources/BGGDemoNetworking/BGGDemoNetworking.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "28"
-            endingLineNumber = "28"
+            startingLineNumber = "76"
+            endingLineNumber = "76"
             landmarkName = "search(geeksite:forQuery:withStats:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -316,8 +316,8 @@
             filePath = "BGGDemoNetworking/Sources/BGGDemoNetworking/BGGDemoNetworking.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "35"
-            endingLineNumber = "35"
+            startingLineNumber = "86"
+            endingLineNumber = "86"
             landmarkName = "search(geeksite:forQuery:withStats:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -332,8 +332,8 @@
             filePath = "BGGDemoNetworking/Sources/BGGDemoNetworking/BGGDemoNetworking.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "42"
-            endingLineNumber = "42"
+            startingLineNumber = "93"
+            endingLineNumber = "93"
             landmarkName = "search(geeksite:forQuery:withStats:)"
             landmarkType = "7">
             <Locations>
@@ -425,8 +425,8 @@
             filePath = "BGGDemoNetworking/Sources/BGGDemoNetworking/BGGDemoNetworking.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "50"
-            endingLineNumber = "50"
+            startingLineNumber = "101"
+            endingLineNumber = "101"
             landmarkName = "search(geeksite:forQuery:withStats:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -441,9 +441,41 @@
             filePath = "BGGDemoNetworking/Sources/BGGDemoNetworking/BGGDemoNetworking.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "48"
-            endingLineNumber = "48"
+            startingLineNumber = "99"
+            endingLineNumber = "99"
             landmarkName = "search(geeksite:forQuery:withStats:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "15CBCD99-72D7-412C-9455-C6D8094E8358"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../../../../var/folders/z3/q7f6bww155b9k71pjzzzg0th0000gn/T/swift-generated-sources/@__swiftmacro_20BGGDemoRepositiories29SearchQueryResponseDataObjectC13responseItems18_PersistedPropertyfMa_.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "1"
+            endingLineNumber = "1"
+            landmarkName = "unknown"
+            landmarkType = "0">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "0E7D846B-15E8-41C1-9CF8-BDCFF6B8DAFC"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "BGGDemoNetworking/Sources/BGGDemoNetworking/BGGDemoNetworking.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "59"
+            endingLineNumber = "59"
+            landmarkName = "search(geeksite:forIds:withStats:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

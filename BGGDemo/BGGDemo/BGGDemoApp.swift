@@ -7,26 +7,49 @@
 
 import SwiftUI
 import SwiftData
+import BGGDemoRepositiories
 
 @main
 struct BGGDemoApp: App {
-    var sharedModelContainer: ModelContainer = {
-        let schema = Schema([
-            Item.self,
-        ])
-        let modelConfiguration = ModelConfiguration(schema: schema, isStoredInMemoryOnly: false)
-
+    var repo: BGGDemoRepositiories
+    let modelContainer: ModelContainer
+    init() {
         do {
-            return try ModelContainer(for: schema, configurations: [modelConfiguration])
+            let schema = Schema([
+                Item.self,
+                BoardGameDataObject.self,
+                BoardGameExpansionDataObject.self
+            ])
+            let modelConfiguration = ModelConfiguration(schema: schema, isStoredInMemoryOnly: false)
+
+            modelContainer = try ModelContainer(for: schema, configurations: [modelConfiguration])
+            repo = .init(modelContext: modelContainer.mainContext)
         } catch {
-            fatalError("Could not create ModelContainer: \(error)")
+            fatalError("Could not initialize ModelContainer")
         }
-    }()
+    }
+    
+//    var sharedModelContainer: ModelContainer = {
+//        let schema = Schema([
+//            Item.self,
+//            BoardGameDataObject.self,
+//            BoardGameExpansionDataObject.self
+//        ])
+//        let modelConfiguration = ModelConfiguration(schema: schema, isStoredInMemoryOnly: false)
+//
+//        do {
+//            return try ModelContainer(for: schema, configurations: [modelConfiguration])
+//        } catch {
+//            fatalError("Could not create ModelContainer: \(error)")
+//        }
+//    }()
 
     var body: some Scene {
         WindowGroup {
-            BGGSearchView(viewModel: BGGSearchViewModel())
+            MainTabView(repo: repo)
         }
-        .modelContainer(sharedModelContainer)
+//        .modelContainer(modelContainer)
     }
 }
+
+

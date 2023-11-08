@@ -43,7 +43,6 @@ extension Future where Failure == Error {
 }
 
 struct BGGSearchView: View {
-    @Environment(\.modelContext) private var modelContext
     @StateObject var viewModel: BGGSearchViewModel
 
     var body: some View {
@@ -53,11 +52,17 @@ struct BGGSearchView: View {
                 Text("Searching for \(viewModel.searchTerm)")
                 
             case .results(let array):
+                // Add a way to filter on the results locally here
                 Text("Results: \(array.count)")
                 List(array) {
                     switch $0 {
                     case .boardGame(let game):
-                        BoardGameSearchResultCell(game)
+                        NavigationLink(
+                            destination: TempView(game: game,
+                                                  repo: viewModel.repo)
+                        ) {
+                            BoardGameSearchResultCell(game)
+                        }
                     default:
                         Text("NOOOPE")
                     }
@@ -73,6 +78,7 @@ struct BGGSearchView: View {
 }
 
 #Preview {
-    BGGSearchView(viewModel: BGGSearchViewModel(initialData: previewBGGThings))
-        .modelContainer(for: Item.self, inMemory: true)
+    let container = try! ModelContainer(for: Item.self, configurations: .init(for: Item.self, isStoredInMemoryOnly: true))
+    return BGGSearchView(viewModel: BGGSearchViewModel(initialData: previewBGGThings, repo: .init(modelContext: container.mainContext)))
+//        .modelContainer(for: Item.self, inMemory: true)
 }

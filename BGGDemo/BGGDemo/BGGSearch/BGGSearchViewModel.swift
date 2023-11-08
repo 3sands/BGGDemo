@@ -14,8 +14,9 @@ import BGGDemoUIComponents
 
 let previewBGGThings: [BGGThing] = [.boardGame(previewBoardGame)]
 
+@MainActor
 class BGGSearchViewModel: ObservableObject {
-    private let repo = BGGDemoRepositiories()
+    let repo: BGGDemoRepositiories
     // input
     @Published var searchTerm: String = ""
     
@@ -27,8 +28,11 @@ class BGGSearchViewModel: ObservableObject {
         case results([BGGThing])
         case error
     }
-    
-    init(initialData: [BGGThing]? = nil) {
+
+    init(initialData: [BGGThing]? = nil,
+         repo: BGGDemoRepositiories) {
+        self.repo = repo
+        
         $searchTerm
             .debounce(for: .milliseconds(300),
                       scheduler: DispatchQueue.main)

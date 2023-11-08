@@ -76,11 +76,12 @@ extension BGGThing: XMLObjectDeserialization {
 }
 
 extension BGGSearchResponseItem: XMLObjectDeserialization {
-    static func deserialize(_ node: XMLIndexer) throws -> BGGSearchResponseItem {
+    public static func deserialize(_ node: XMLIndexer) throws -> BGGSearchResponseItem {
         return try BGGSearchResponseItem(
             id: node.value(ofAttribute: XMLDecodingStrings.id.rawValue),
             name: node[XMLDecodingStrings.name.rawValue].value(ofAttribute: XMLDecodingStrings.value.rawValue),
-            yearPublished: node[XMLDecodingStrings.yearpublished.rawValue].value(ofAttribute: XMLDecodingStrings.value.rawValue)
+            yearPublished: node[XMLDecodingStrings.yearpublished.rawValue].value(ofAttribute: XMLDecodingStrings.value.rawValue), 
+            type: node.value(ofAttribute: XMLDecodingStrings.type.rawValue)
         )
     }
 }
