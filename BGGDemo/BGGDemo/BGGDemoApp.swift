@@ -7,11 +7,11 @@
 
 import SwiftUI
 import SwiftData
-import BGGDemoRepositiories
+import BGGDemoRepositories
 
 @main
 struct BGGDemoApp: App {
-    var repo: BGGDemoRepositiories
+    var repo: BGGDemoRepositoryService
     let modelContainer: ModelContainer
     init() {
         do {
@@ -23,7 +23,7 @@ struct BGGDemoApp: App {
             let modelConfiguration = ModelConfiguration(schema: schema, isStoredInMemoryOnly: false)
 
             modelContainer = try ModelContainer(for: schema, configurations: [modelConfiguration])
-            repo = .init(modelContext: modelContainer.mainContext)
+            repo = BGGDemoRepositories(modelContext: modelContainer.mainContext)
         } catch {
             fatalError("Could not initialize ModelContainer")
         }

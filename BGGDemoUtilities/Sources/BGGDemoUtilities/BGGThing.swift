@@ -31,4 +31,18 @@ public enum BGGThing: Identifiable, CaseIterable {
             return UUID.init().hashValue
         }
     }
+    
+    public var boardGame: BoardGame? {
+        switch self {
+        case .boardGame(let boardGame):
+            return boardGame
+        case .boardGameExpansion,
+                .boardGameAccessory,
+                .videoGame,
+                .rpgItem,
+                .rpgIssue,
+                .unknown:
+            return nil
+        }
+    }
 }

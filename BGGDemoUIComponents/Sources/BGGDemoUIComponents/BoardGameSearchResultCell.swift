@@ -8,30 +8,28 @@
 import BGGDemoUtilities
 import SwiftUI
 
+// View for the Board Game Search Result Cell
 public struct BoardGameSearchResultCell: View {
-    private let game: BoardGame
-    
     public var body: some View {
         HStack {
             AsyncImage(url: URL(string: game.thumbnailURL ?? "")) { image in
                 image.image?.resizable()
+                    .aspectRatio(contentMode: .fit)
+                    .frame(width: 80, height: 80)
             }
-                .frame(width: 80, height: 80)
+            
             VStack(alignment: .leading) {
-                Text(game.mainTitle)
+                BoardGameTitleView(game)
                 
-                if let minPlayers = game.minPlayers,
-                   let maxPlayers = game.maxPlayers {
-                    Text("Players: \(minPlayers) - \(maxPlayers)")
+                HStack {
+                    PlayersNumberView(game)
+                    
+                    MinAgeView(game)
                 }
                 
-                if let minPlaytime = game.minPlaytime,
-                   let maxPlaytime = game.maxPlaytime {
-                    Text("Minutes of play: \(minPlaytime) - \(maxPlaytime)")
-                }
-                
-                if let averageRating = game.averageRating {
-                    Text(String(format: "Average Rating: %.2f", averageRating))
+                HStack {
+                    PlaytimeView(game)
+                    AverageRatingView(game)
                 }
             }
             
@@ -39,13 +37,16 @@ public struct BoardGameSearchResultCell: View {
         }
         .padding()
         .overlay(RoundedRectangle(cornerRadius: 10)
-            .stroke(.blue, lineWidth: 4)
+            .stroke(.brown, lineWidth: 4)
         )
+        .background(Color.khaki)
     }
     
     public init(_ game: BoardGame) {
         self.game = game
     }
+    
+    private let game: BoardGame
 }
 
 #Preview {

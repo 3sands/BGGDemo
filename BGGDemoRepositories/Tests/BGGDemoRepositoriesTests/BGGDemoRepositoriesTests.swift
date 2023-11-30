@@ -1,7 +1,7 @@
 import XCTest
 @testable import BGGDemoRepositiories
 
-final class BGGDemoRepositioriesTests: XCTestCase {
+final class BGGDemoRepositoriesTests: XCTestCase {
     func testExample() throws {
         // XCTest Documentation
         // https://developer.apple.com/documentation/xctest

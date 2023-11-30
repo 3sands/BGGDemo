@@ -5,7 +5,7 @@
       location = "group:BGGDemoUIComponents">
    </FileRef>
    <FileRef
-      location = "group:BGGDemoRepositiories">
+      location = "group:BGGDemoRepositories">
    </FileRef>
    <FileRef
       location = "group:/Users/trey/ios/BGGDemo/BGGDemoUtilities">

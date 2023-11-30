@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2D10221E2AFD51DE00F222A9 /* BGGDemoRepositories in Frameworks */ = {isa = PBXBuildFile; productRef = 2D10221D2AFD51DE00F222A9 /* BGGDemoRepositories */; };
+		2D1022202AFD524C00F222A9 /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D10221F2AFD524C00F222A9 /* String+Extensions.swift */; };
 		2D3DA1EF2AE8B73C001340B0 /* BGGDemoApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D3DA1EE2AE8B73C001340B0 /* BGGDemoApp.swift */; };
 		2D3DA1F12AE8B73C001340B0 /* BGGSearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D3DA1F02AE8B73C001340B0 /* BGGSearchView.swift */; };
 		2D3DA1F32AE8B73C001340B0 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D3DA1F22AE8B73C001340B0 /* Item.swift */; };
@@ -15,10 +17,10 @@
 		2D3DA2032AE8B73D001340B0 /* BGGDemoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D3DA2022AE8B73D001340B0 /* BGGDemoTests.swift */; };
 		2D3DA20D2AE8B73D001340B0 /* BGGDemoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D3DA20C2AE8B73D001340B0 /* BGGDemoUITests.swift */; };
 		2D3DA20F2AE8B73D001340B0 /* BGGDemoUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D3DA20E2AE8B73D001340B0 /* BGGDemoUITestsLaunchTests.swift */; };
-		2D3DA21E2AE99F99001340B0 /* BGGDemoRepositiories in Frameworks */ = {isa = PBXBuildFile; productRef = 2D3DA21D2AE99F99001340B0 /* BGGDemoRepositiories */; };
 		2D3DA2212AEABD2E001340B0 /* BGGDemoUIComponents in Frameworks */ = {isa = PBXBuildFile; productRef = 2D3DA2202AEABD2E001340B0 /* BGGDemoUIComponents */; };
+		2D58EBF82B180D8D00B7AA1F /* BoardGameDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D58EBF72B180D8D00B7AA1F /* BoardGameDetailViewModel.swift */; };
 		2DBA421D2AEAFD9400E4293C /* MainTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DBA421C2AEAFD9400E4293C /* MainTabView.swift */; };
-		2DBA421F2AEC35C600E4293C /* TempView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DBA421E2AEC35C600E4293C /* TempView.swift */; };
+		2DBA421F2AEC35C600E4293C /* BoardGameDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DBA421E2AEC35C600E4293C /* BoardGameDetailView.swift */; };
 		2DD046D52AEAC7DB00F0E051 /* BGGSearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DD046D42AEAC7DB00F0E051 /* BGGSearchViewModel.swift */; };
 /* End PBXBuildFile section */
 
@@ -40,6 +42,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2D10221F2AFD524C00F222A9 /* String+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extensions.swift"; sourceTree = "<group>"; };
 		2D3DA1EB2AE8B73C001340B0 /* BGGDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BGGDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2D3DA1EE2AE8B73C001340B0 /* BGGDemoApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BGGDemoApp.swift; sourceTree = "<group>"; };
 		2D3DA1F02AE8B73C001340B0 /* BGGSearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BGGSearchView.swift; sourceTree = "<group>"; };
@@ -52,8 +55,9 @@
 		2D3DA2082AE8B73D001340B0 /* BGGDemoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BGGDemoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2D3DA20C2AE8B73D001340B0 /* BGGDemoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BGGDemoUITests.swift; sourceTree = "<group>"; };
 		2D3DA20E2AE8B73D001340B0 /* BGGDemoUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BGGDemoUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		2D58EBF72B180D8D00B7AA1F /* BoardGameDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardGameDetailViewModel.swift; sourceTree = "<group>"; };
 		2DBA421C2AEAFD9400E4293C /* MainTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabView.swift; sourceTree = "<group>"; };
-		2DBA421E2AEC35C600E4293C /* TempView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TempView.swift; sourceTree = "<group>"; };
+		2DBA421E2AEC35C600E4293C /* BoardGameDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardGameDetailView.swift; sourceTree = "<group>"; };
 		2DD046D42AEAC7DB00F0E051 /* BGGSearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BGGSearchViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -62,8 +66,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2D10221E2AFD51DE00F222A9 /* BGGDemoRepositories in Frameworks */,
 				2D3DA2212AEABD2E001340B0 /* BGGDemoUIComponents in Frameworks */,
-				2D3DA21E2AE99F99001340B0 /* BGGDemoRepositiories in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -164,7 +168,9 @@
 			children = (
 				2D3DA1F02AE8B73C001340B0 /* BGGSearchView.swift */,
 				2DD046D42AEAC7DB00F0E051 /* BGGSearchViewModel.swift */,
-				2DBA421E2AEC35C600E4293C /* TempView.swift */,
+				2DBA421E2AEC35C600E4293C /* BoardGameDetailView.swift */,
+				2D58EBF72B180D8D00B7AA1F /* BoardGameDetailViewModel.swift */,
+				2D10221F2AFD524C00F222A9 /* String+Extensions.swift */,
 			);
 			path = BGGSearch;
 			sourceTree = "<group>";
@@ -187,8 +193,8 @@
 			);
 			name = BGGDemo;
 			packageProductDependencies = (
-				2D3DA21D2AE99F99001340B0 /* BGGDemoRepositiories */,
 				2D3DA2202AEABD2E001340B0 /* BGGDemoUIComponents */,
+				2D10221D2AFD51DE00F222A9 /* BGGDemoRepositories */,
 			);
 			productName = BGGDemo;
 			productReference = 2D3DA1EB2AE8B73C001340B0 /* BGGDemo.app */;
@@ -324,10 +330,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2DBA421F2AEC35C600E4293C /* TempView.swift in Sources */,
+				2DBA421F2AEC35C600E4293C /* BoardGameDetailView.swift in Sources */,
+				2D1022202AFD524C00F222A9 /* String+Extensions.swift in Sources */,
 				2D3DA1F12AE8B73C001340B0 /* BGGSearchView.swift in Sources */,
 				2DD046D52AEAC7DB00F0E051 /* BGGSearchViewModel.swift in Sources */,
 				2D3DA1F32AE8B73C001340B0 /* Item.swift in Sources */,
+				2D58EBF82B180D8D00B7AA1F /* BoardGameDetailViewModel.swift in Sources */,
 				2D3DA1EF2AE8B73C001340B0 /* BGGDemoApp.swift in Sources */,
 				2DBA421D2AEAFD9400E4293C /* MainTabView.swift in Sources */,
 			);
@@ -688,9 +696,9 @@
 /* End XCConfigurationList section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		2D3DA21D2AE99F99001340B0 /* BGGDemoRepositiories */ = {
+		2D10221D2AFD51DE00F222A9 /* BGGDemoRepositories */ = {
 			isa = XCSwiftPackageProductDependency;
-			productName = BGGDemoRepositiories;
+			productName = BGGDemoRepositories;
 		};
 		2D3DA2202AEABD2E001340B0 /* BGGDemoUIComponents */ = {
 			isa = XCSwiftPackageProductDependency;

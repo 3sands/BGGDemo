@@ -8,39 +8,9 @@
 import Combine
 import SwiftUI
 import SwiftData
-import BGGDemoRepositiories
+import BGGDemoRepositories
 import BGGDemoUtilities
 import BGGDemoUIComponents
-
-extension Publisher {
-    func asyncMap<T>(
-        _ transform: @escaping (Output) async -> T
-    ) -> Publishers.FlatMap<Future<T, Never>, Self> {
-        flatMap { value in
-            Future { promise in
-                Task {
-                    let output = await transform(value)
-                    promise(.success(output))
-                }
-            }
-        }
-    }
-}
-
-extension Future where Failure == Error {
-    convenience init(operation: @escaping () async throws -> Output) {
-        self.init { promise in
-            Task {
-                do {
-                    let output = try await operation()
-                    promise(.success(output))
-                } catch {
-                    promise(.failure(error))
-                }
-            }
-        }
-    }
-}
 
 struct BGGSearchView: View {
     @StateObject var viewModel: BGGSearchViewModel
@@ -49,25 +19,27 @@ struct BGGSearchView: View {
         NavigationStack {
             switch viewModel.boardGameResults {
             case .noResults:
-                Text("Searching for \(viewModel.searchTerm)")
+                Text("Searching for \(viewModel.searchTerm) resulted in no results")
                 
             case .results(let array):
-                // Add a way to filter on the results locally here
+                // TODO: Add a way to filter on the results locally here
                 Text("Results: \(array.count)")
                 List(array) {
                     switch $0 {
                     case .boardGame(let game):
+                        // TODO: update navigation
                         NavigationLink(
-                            destination: TempView(game: game,
-                                                  repo: viewModel.repo)
+                            destination: BoardGameDetailView(gameID: game.id,
+                                                             repo: viewModel.repo)
                         ) {
+                            // TODO: Check for accessibility
                             BoardGameSearchResultCell(game)
                         }
                     default:
                         Text("NOOOPE")
                     }
                 }
-                .ignoresSafeArea()
+                .listStyle(.plain)
             case .error:
                 Text("Error")
             }
@@ -79,6 +51,5 @@ struct BGGSearchView: View {
 
 #Preview {
     let container = try! ModelContainer(for: Item.self, configurations: .init(for: Item.self, isStoredInMemoryOnly: true))
-    return BGGSearchView(viewModel: BGGSearchViewModel(initialData: previewBGGThings, repo: .init(modelContext: container.mainContext)))
-//        .modelContainer(for: Item.self, inMemory: true)
+    return BGGSearchView(viewModel: BGGSearchViewModel(initialData: previewBGGThings, repo: BGGDemoRepositories(modelContext: container.mainContext)))
 }

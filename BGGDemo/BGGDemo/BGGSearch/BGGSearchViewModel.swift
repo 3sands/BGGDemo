@@ -8,7 +8,7 @@
 import Combine
 import Foundation
 import SwiftData
-import BGGDemoRepositiories
+import BGGDemoRepositories
 import BGGDemoUtilities
 import BGGDemoUIComponents
 
@@ -16,7 +16,7 @@ let previewBGGThings: [BGGThing] = [.boardGame(previewBoardGame)]
 
 @MainActor
 class BGGSearchViewModel: ObservableObject {
-    let repo: BGGDemoRepositiories
+    let repo: BGGDemoRepositoryService
     // input
     @Published var searchTerm: String = ""
     
@@ -30,7 +30,7 @@ class BGGSearchViewModel: ObservableObject {
     }
 
     init(initialData: [BGGThing]? = nil,
-         repo: BGGDemoRepositiories) {
+         repo: BGGDemoRepositoryService) {
         self.repo = repo
         
         $searchTerm
