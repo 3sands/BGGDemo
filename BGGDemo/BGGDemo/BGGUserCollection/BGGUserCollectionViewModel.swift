@@ -33,6 +33,12 @@ class BGGUserCollectionViewModel: ObservableObject {
          repo: BGGDemoRepositoryService) {
         self.repo = repo
         
+        setupSearchForUserCollectionAfterSearchTermInputChanges()
+        initializeUserCollectionView(from: initialData)
+    }
+    
+    /// Binds searching for user collection after the search input changes to the collection results publisher
+    private func setupSearchForUserCollectionAfterSearchTermInputChanges() {
         $userName
             .debounce(for: .milliseconds(300),
                       scheduler: DispatchQueue.main)
@@ -65,9 +71,13 @@ class BGGUserCollectionViewModel: ObservableObject {
             }
             .eraseToAnyPublisher()
             .assign(to: &$collectionResults)
-        
-        if let initialData {
-            Just(SearchState.results(initialData))
+    }
+    
+    /// Initializes the user collection view with any cached  result
+    /// - Parameter userCollection: initial cached user collection
+    private func initializeUserCollectionView(from userCollection: UserCollection? = nil) {
+        if let userCollection {
+            Just(SearchState.results(userCollection))
                 .assign(to: &$collectionResults)
         }
     }

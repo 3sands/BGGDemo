@@ -27,11 +27,13 @@ class BoardGameDetailViewModel: ObservableObject {
         self.gameID = gameID
         
         Task {
-            await fetch()
+            await fetchAndDisplayGame(for: gameID)
         }
     }
     
-    private func fetch() async {
+    /// Fetches from the repo the bgg item for a game ID
+    /// - Parameter gameID: BGG ID of game
+    private func fetchAndDisplayGame(for gameID: Int) async {
         do {
             let awaitedGame = try await repo.bggItem(forId: gameID)?.boardGame
             if let awaitedGame {

@@ -33,20 +33,31 @@ class BGGSearchViewModel: ObservableObject {
          repo: BGGDemoRepositoryService) {
         self.repo = repo
         
+        setupSearchForGamesAfterSearchTermInputChanges()
+        initializeSearchView(from: initialData)
+    }
+    
+    /// Binds searching for games after the search input changes to the board game results publisher
+    private func setupSearchForGamesAfterSearchTermInputChanges() {
         $searchTerm
             .debounce(for: .milliseconds(300),
                       scheduler: DispatchQueue.main)
             .removeDuplicates()
-            .filter { !$0.isEmpty }
             .flatMap { query -> Future<[BGGThing], Never> in
                 Future { promise in
                     Task {
                         do {
-                            let result = try await self.repo.bggItems(from: .boardGame, 
+                            guard query.isNotEmpty else {
+                                promise(.success([]))
+                                return
+                            }
+
+                            let result = try await self.repo.bggItems(from: .boardGame,
                                                                       forSearchQuery: query,
                                                                       withStats: true)
                             promise(.success(result))
                         } catch {
+                            // TODO: Add proper error handling
                             print("🦄 \(error)")
                             promise(.success([]))
                         }
@@ -63,11 +74,14 @@ class BGGSearchViewModel: ObservableObject {
             }
             .eraseToAnyPublisher()
             .assign(to: &$boardGameResults)
-        
-        if let initialData {
-            Just(SearchState.results(initialData))
+    }
+    
+    /// Initializes the search view with any cached search result
+    /// - Parameter cachedData: initial cached board games search results
+    private func initializeSearchView(from cachedData: [BGGThing]?) {
+        if let cachedData {
+            Just(SearchState.results(cachedData))
                 .assign(to: &$boardGameResults)
         }
     }
-   
 }
