@@ -25,6 +25,7 @@ class BGGSearchViewModel: ObservableObject {
     
     enum SearchState {
         case noResults
+        case emptySearchTerm
         case results([BGGThing])
         case error
     }
@@ -43,35 +44,33 @@ class BGGSearchViewModel: ObservableObject {
             .debounce(for: .milliseconds(300),
                       scheduler: DispatchQueue.main)
             .removeDuplicates()
-            .flatMap { query -> Future<[BGGThing], Never> in
+            .flatMap { query -> Future<SearchState, Never> in
                 Future { promise in
                     Task {
                         do {
                             guard query.isNotEmpty else {
-                                promise(.success([]))
+                                promise(.success(.emptySearchTerm))
                                 return
                             }
 
                             let result = try await self.repo.bggItems(from: .boardGame,
                                                                       forSearchQuery: query,
                                                                       withStats: true)
-                            promise(.success(result))
+                            guard result.isNotEmpty else {
+                                promise(.success(.noResults))
+                                return
+                            }
+                            
+                            promise(.success(.results(result)))
                         } catch {
                             // TODO: Add proper error handling
                             print("🦄 \(error)")
-                            promise(.success([]))
+                            promise(.success(.error))
                         }
                     }
                 }
             }
             .receive(on: DispatchQueue.main)
-            .map { games -> SearchState in
-                if games.isEmpty {
-                    return SearchState.noResults
-                } else {
-                    return SearchState.results(games)
-                }
-            }
             .eraseToAnyPublisher()
             .assign(to: &$boardGameResults)
     }

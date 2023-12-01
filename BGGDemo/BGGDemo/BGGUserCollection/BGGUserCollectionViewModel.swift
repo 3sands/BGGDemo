@@ -22,6 +22,7 @@ class BGGUserCollectionViewModel: ObservableObject {
     @Published private(set) var collectionResults: SearchState = .noResults
     
     enum SearchState {
+        case emptySearchTerm
         case noResults
         case results(UserCollection)
         case error
@@ -43,32 +44,32 @@ class BGGUserCollectionViewModel: ObservableObject {
             .debounce(for: .milliseconds(300),
                       scheduler: DispatchQueue.main)
             .removeDuplicates()
-            .flatMap { userName -> Future<UserCollection, Never> in
+            .flatMap { userName -> Future<SearchState, Never> in
                 Future { promise in
                     Task {
                         do {
                             guard userName.isNotEmpty else {
-                                promise(.success(UserCollection.empty))
+                                promise(.success(.emptySearchTerm))
 
                                 return
                             }
 
                             let result = try await self.repo.collection(forUserName: userName)
-                            promise(.success(result))
+                            
+                            guard result.collection.isNotEmpty else {
+                                promise(.success(.noResults))
+
+                                return
+                            }
+                            
+                            promise(.success(.results(result)))
                         } catch {
-                            promise(.success(UserCollection.empty))
+                            promise(.success(.error))
                         }
                     }
                 }
             }
             .receive(on: DispatchQueue.main)
-            .map { userCollection -> SearchState in
-                if userCollection.collection.isEmpty && userCollection.userName == "" {
-                    return SearchState.noResults
-                }
-                
-                return SearchState.results(userCollection)
-            }
             .eraseToAnyPublisher()
             .assign(to: &$collectionResults)
     }

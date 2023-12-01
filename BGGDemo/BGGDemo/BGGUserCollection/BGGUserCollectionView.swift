@@ -16,6 +16,9 @@ struct BGGUserCollectionView: View {
     var body: some View {
         NavigationStack {
             switch viewModel.collectionResults {
+            case .emptySearchTerm:
+                Text("Enter a user name to view their collection")
+
             case .noResults:
                 Text("No collection for the username \(viewModel.userName)")
                 
@@ -40,6 +43,7 @@ struct BGGUserCollectionView: View {
                     }
                 }
                 .listStyle(.plain)
+
             case .error:
                 Text("Error")
             }

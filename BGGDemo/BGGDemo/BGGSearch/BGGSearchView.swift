@@ -18,6 +18,8 @@ struct BGGSearchView: View {
     var body: some View {
         NavigationStack {
             switch viewModel.boardGameResults {
+            case .emptySearchTerm:
+                Text("Enter a search term for a board game")
             case .noResults:
                 Text("Searching for \(viewModel.searchTerm) resulted in no results")
                 
