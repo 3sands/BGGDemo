@@ -13,8 +13,6 @@ import BGGDemoUtilities
 import BGGDemoUIComponents
 
 struct BGGUserCollectionView: View {
-    @StateObject var viewModel: BGGUserCollectionViewModel
-
     var body: some View {
         NavigationStack {
             switch viewModel.collectionResults {
@@ -49,9 +47,18 @@ struct BGGUserCollectionView: View {
         .autocorrectionDisabled()
         .textInputAutocapitalization(.never)
     }
+    
+    init(initialData: UserCollection? = nil,
+         repo: BGGDemoRepositoryService) {
+        _viewModel = .init(wrappedValue: BGGUserCollectionViewModel(initialData: initialData,
+                                                                      repo: repo))
+
+    }
+    
+    @StateObject private var viewModel: BGGUserCollectionViewModel
 }
 
 #Preview {
     let container = try! ModelContainer(for: BoardGameDataObject.self, configurations: .init(for: BoardGameDataObject.self, isStoredInMemoryOnly: true))
-    return BGGUserCollectionView(viewModel: BGGUserCollectionViewModel(initialData: previewUserCollection, repo: BGGDemoRepositories(modelContext: container.mainContext)))
+    return BGGUserCollectionView(initialData: previewUserCollection, repo: BGGDemoRepositories(modelContext: container.mainContext))
 }
