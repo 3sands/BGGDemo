@@ -43,6 +43,7 @@ public struct UserCollectionCell: View {
                 NumberOfPlaysView(game)
                 UserRatingView(game)
                 AverageCommunityRatingView(game)
+                YearPublishedView(game)
             }
         }
     }

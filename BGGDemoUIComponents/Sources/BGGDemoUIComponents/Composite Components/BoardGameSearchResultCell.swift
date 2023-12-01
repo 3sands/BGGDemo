@@ -22,9 +22,11 @@ public struct BoardGameSearchResultCell: View {
                     MinAgeView(game)
                 }
                 
+                MinMixPlaytimeView(game)
+                
                 HStack {
-                    MinMixPlaytimeView(game)
                     AverageCommunityRatingView(game)
+                    YearPublishedView(game)
                 }
             }
             

@@ -34,6 +34,7 @@ struct BoardGameDetailView: View {
                         MinAgeView(game)
                         MinMixPlaytimeView(game)
                         AverageCommunityRatingView(game)
+                        YearPublishedView(game)
                     }
                     .padding()
                 }
