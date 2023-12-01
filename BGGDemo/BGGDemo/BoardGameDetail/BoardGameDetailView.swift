@@ -20,8 +20,11 @@ struct BoardGameDetailView: View {
             // TODO
             Text("No data available")
         case .error(let error):
-            // TODO
-            Text(error.localizedDescription)
+            if let customError = error as? CustomErrors {
+                Text("Error: \(customError.displayText)")
+            } else {
+                Text("Unknown error occurred")
+            }
         case .game(let game):
             ScrollView {
                 BoardGameDetailTitleView(game)

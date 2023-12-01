@@ -25,7 +25,7 @@ class BGGUserCollectionViewModel: ObservableObject {
         case emptySearchTerm
         case noResults
         case results(UserCollection)
-        case error
+        case error(Error)
     }
 
     // TODO: save user collection OR save username and/or make the call each time
@@ -64,7 +64,7 @@ class BGGUserCollectionViewModel: ObservableObject {
                             
                             promise(.success(.results(result)))
                         } catch {
-                            promise(.success(.error))
+                            promise(.success(.error(error)))
                         }
                     }
                 }

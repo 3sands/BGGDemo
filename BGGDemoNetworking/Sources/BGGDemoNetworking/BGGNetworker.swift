@@ -30,7 +30,7 @@ public class BGGNetworker: BGGNetworkingService {
         let resultXML = XMLHash.parse(resultXMLString)
         
         // Check for results total. If there are 0, then need to return early. Otherwise, error will throw when trying to get the items
-        let resultsTotal: Int = try resultXML[XMLDecodingStrings.items.rawValue].value(ofAttribute: XMLDecodingStrings.total.rawValue)
+        let resultsTotal: Int = try resultXML[XMLDecodingStrings.items.decodeKey].value(ofAttribute: XMLDecodingStrings.total.decodeKey)
         guard resultsTotal > 0 else {
             return BGGSearchResponse(query: query, items: [])
         }
@@ -38,12 +38,17 @@ public class BGGNetworker: BGGNetworkingService {
         // BGG has an annoying API where the initial search results only return the title and the ID, no other info.
         // Need to do another call with all the IDs in this result to get the other results.
         // Will then need to do image thumbnails
-        let items: [BGGSearchResponseItem] = try resultXML[XMLDecodingStrings.items.rawValue][XMLDecodingStrings.item.rawValue].value()
+        let items: [BGGSearchResponseItem] = try resultXML[XMLDecodingStrings.items.decodeKey][XMLDecodingStrings.item.decodeKey].value()
         
         return BGGSearchResponse(query: query, items: items)
     }
     
     public func search(geeksite: GeekSite, forIds ids: [Int], withStats: Bool) async throws -> [BGGThing] {
+        // Check for empty IDs list first
+        guard ids.isNotEmpty else {
+            return []
+        }
+
         // BGG has an annoying API where the initial search results only return the title and the ID, no other info.
         // Need to do another call with all the IDs in this result to get the other results.
         // Will then need to do image thumbnails
@@ -70,12 +75,14 @@ public class BGGNetworker: BGGNetworkingService {
         let gameXMLHash = XMLHash.parse(gamesXMLString)
         
         // convert XML into the BGGThings to be displayed
-        let bggThings: [BGGThing] = try gameXMLHash[XMLDecodingStrings.items.rawValue][XMLDecodingStrings.item.rawValue].value()
+        let bggThings: [BGGThing] = try gameXMLHash[XMLDecodingStrings.items.decodeKey][XMLDecodingStrings.item.decodeKey].value()
 
         return bggThings
     }
 
-    public func search(geeksite: GeekSite, forQuery query: String, withStats: Bool) async throws -> [BGGThing] {
+    public func search(geeksite: GeekSite, 
+                       forQuery query: String,
+                       withStats: Bool) async throws -> [BGGThing] {
         // Make the url of the initial search for query
         guard let url = Endpoint.search(geekSite: geeksite, query: query).url else {
             throw CustomErrors.missingSearchForQueryURL
@@ -95,7 +102,7 @@ public class BGGNetworker: BGGNetworkingService {
         // BGG has an annoying API where the initial search results only return the title and the ID, no other info.
         // Need to do another call with all the IDs in this result to get the other results.
         // Will then need to do image thumbnails
-        var results: [BGGSearchResponseItem] = try resultXML[XMLDecodingStrings.items.rawValue][XMLDecodingStrings.item.rawValue].value()
+        var results: [BGGSearchResponseItem] = try resultXML[XMLDecodingStrings.items.decodeKey][XMLDecodingStrings.item.decodeKey].value()
         let first = results.removeFirst().id
         let gameIdsToSearch = results.reduce("\(first)") { old, new in "\(old),\(new.id)"}
         
@@ -117,7 +124,7 @@ public class BGGNetworker: BGGNetworkingService {
         // Parse the XML String into something usable
         let gameXMLHash = XMLHash.parse(gamesXMLString)
         // convert XML into the BGGThings to be displayed
-        let bggThings: [BGGThing] = try gameXMLHash[XMLDecodingStrings.items.rawValue][XMLDecodingStrings.item.rawValue].value()
+        let bggThings: [BGGThing] = try gameXMLHash[XMLDecodingStrings.items.decodeKey][XMLDecodingStrings.item.decodeKey].value()
 
         return bggThings
     }
@@ -128,11 +135,15 @@ public class BGGNetworker: BGGNetworkingService {
         // but incorrectly gives subtype=boardgame for the expansions. Workaround is to use excludesubtype=boardgameexpansion and
         // make a 2nd call asking for subtype=boardgameexpansion
         
+        // TODO: can do those two calls in parallel and merge them
+        
         // Make the call for only the boardGames
         // Need to do 3 delayed retries while the BGG backend processes our request
         for _ in 0..<3 {
             // Make the url of the initial search for user, download the data, and attempt to parse into xml
-            guard let url = Endpoint.userCollection(geekSite: .boardGame, userName: userName, withExpansions: false).url else {
+            guard let url = Endpoint.userCollection(geekSite: .boardGame, 
+                                                    userName: userName,
+                                                    withExpansions: false).url else {
                 throw CustomErrors.missingUserNameURL
             }
             
@@ -158,11 +169,24 @@ public class BGGNetworker: BGGNetworkingService {
             }
             
             let resultXML = XMLHash.parse(resultXMLString)
+            
+            // Check for errors
+            
+            if let errorMessage: String = try? resultXML[XMLDecodingStrings.errors.decodeKey][XMLDecodingStrings.error.decodeKey][XMLDecodingStrings.message.decodeKey].value() {
+                throw CustomErrors.bggProvidedError(errorMessage)
+            }
+            
+            // Check for results total. If there are 0, then need to return early. Otherwise, error will throw when trying to get the items
+            let resultsTotal: Int = try resultXML[XMLDecodingStrings.items.decodeKey].value(ofAttribute: XMLDecodingStrings.total.decodeKey)
+            guard resultsTotal > 0 else {
+                // TODO: need to adjust this when doing the board game expansion, because that request also could NOT be empty
+                return UserCollection(userName: userName, collection: [])
+            }
 
             // BGG has an annoying API where the initial search results only return the title and the ID, no other info.
             // Need to do another call with all the IDs in this result to get the other results.
             // Will then need to do image thumbnails
-            let results: [UserCollectionThing] = try resultXML[XMLDecodingStrings.items.rawValue][XMLDecodingStrings.item.rawValue].value()
+            let results: [UserCollectionThing] = try resultXML[XMLDecodingStrings.items.decodeKey][XMLDecodingStrings.item.decodeKey].value()
 
             // TODO make the call the expansions
             return UserCollection(userName: userName, collection: results)

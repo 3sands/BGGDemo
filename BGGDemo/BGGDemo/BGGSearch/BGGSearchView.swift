@@ -43,8 +43,12 @@ struct BGGSearchView: View {
                     }
                 }
                 .listStyle(.plain)
-            case .error:
-                Text("Error")
+            case .error(let error):
+                if let customError = error as? CustomErrors {
+                    Text("Error: \(customError.displayText)")
+                } else {
+                    Text("Unknown error occurred")
+                }
             }
         }
         // TODO: customize the search bar and nav bar to look nice

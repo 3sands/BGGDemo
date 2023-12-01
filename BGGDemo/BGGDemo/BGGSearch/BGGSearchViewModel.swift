@@ -27,7 +27,7 @@ class BGGSearchViewModel: ObservableObject {
         case noResults
         case emptySearchTerm
         case results([BGGThing])
-        case error
+        case error(Error)
     }
 
     init(initialData: [BGGThing]? = nil,
@@ -63,9 +63,7 @@ class BGGSearchViewModel: ObservableObject {
                             
                             promise(.success(.results(result)))
                         } catch {
-                            // TODO: Add proper error handling
-                            print("🦄 \(error)")
-                            promise(.success(.error))
+                            promise(.success(.error(error)))
                         }
                     }
                 }

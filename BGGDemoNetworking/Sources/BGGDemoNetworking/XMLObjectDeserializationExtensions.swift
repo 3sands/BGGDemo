@@ -15,10 +15,13 @@ enum XMLDecodingStrings: String {
     case boardgameexpansion
     case comment
     case description
+    case error
+    case errors
     case id
     case image
     case item
     case items
+    case message
     case minage
     case minplayers
     case maxplayers
