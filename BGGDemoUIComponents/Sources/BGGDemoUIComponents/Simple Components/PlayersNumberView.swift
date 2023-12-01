@@ -39,6 +39,11 @@ public struct PlayersNumberView: View {
     private var labelText: String? {
         if let minPlayers = game.minPlayers,
            let maxPlayers = game.maxPlayers {
+            // Don't need to show unnecessary hyphen if there's only 1 number of players allowed
+            guard minPlayers != maxPlayers else {
+                return "\(minPlayers)"
+            }
+
             return "\(minPlayers) - \(maxPlayers)"
         } else if let minPlayers = game.minPlayers {
             return "\(minPlayers)"

@@ -39,6 +39,11 @@ public struct MinMixPlaytimeView: View {
     private var labelText: String? {
         if let minPlaytime = game.minPlaytime,
            let maxPlaytime = game.maxPlaytime {
+            // Don't need to show unnecessary hyphen if there's only 1 playtime allowed
+            guard minPlaytime != maxPlaytime else {
+                return "\(minPlaytime)"
+            }
+
             return "\(minPlaytime) - \(maxPlaytime)"
         } else if let minPlaytime = game.minPlaytime {
             return "\(minPlaytime)"
