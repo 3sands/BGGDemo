@@ -23,6 +23,7 @@ struct BGGSearchView: View {
                 
             case .results(let array):
                 // TODO: Add a way to filter on the results locally here
+                // TODO: add in toggle for list vs grid display
                 Text("Results: \(array.count)")
                 List(array) {
                     switch $0 {
@@ -44,6 +45,7 @@ struct BGGSearchView: View {
                 Text("Error")
             }
         }
+        // TODO: customize the search bar and nav bar to look nice
         .navigationTitle("BGGDemo")
             .searchable(text: $viewModel.searchTerm)
             .disableAutocorrection(true)

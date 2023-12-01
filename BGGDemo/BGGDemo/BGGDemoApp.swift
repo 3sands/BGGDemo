@@ -18,6 +18,7 @@ struct BGGDemoApp: App {
             let schema = Schema([
                 BoardGameDataObject.self,
                 BoardGameExpansionDataObject.self
+                // TODO: Add in user collection data object
             ])
             let modelConfiguration = ModelConfiguration(schema: schema, isStoredInMemoryOnly: false)
 

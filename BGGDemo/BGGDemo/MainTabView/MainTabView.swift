@@ -21,6 +21,7 @@ struct MainTabView: View {
                 .tabItem {
                     Label("Collection", systemImage: "archivebox")
                 }
+            // TODO: add settings tab?
         }
     }
 }

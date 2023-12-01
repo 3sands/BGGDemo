@@ -21,6 +21,8 @@ struct BGGUserCollectionView: View {
                 
             case .results(let array):
                 // TODO: Add a way to filter on the results locally here
+                // TODO: add in toggle for list vs grid display
+                // TODO: Add in a refresh button for user collection to get updated from website
                 Text("Results: \(array.collection.count)")
                 List(array.collection) {
                     switch $0 {
@@ -42,6 +44,7 @@ struct BGGUserCollectionView: View {
                 Text("Error")
             }
         }
+        // TODO: customize the search bar and nav bar to look nice
         .navigationTitle("User Collection")
         .searchable(text: $viewModel.userName)
         .autocorrectionDisabled()

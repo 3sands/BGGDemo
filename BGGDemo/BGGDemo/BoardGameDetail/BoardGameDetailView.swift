@@ -39,6 +39,13 @@ struct BoardGameDetailView: View {
                 }
                 
                 BoardGameDetailDescriptionView(game)
+                
+                // TODO: add in other stats that are available
+                // TODO: add in a button to "show more" to make a new call to bgg api
+                // to get the extra details
+                
+                // TODO: Add in link to bgg website itself
+                // TODO: add in a share button to share the game's ID with another user?
 
                 Spacer()
             }
@@ -50,7 +57,6 @@ struct BoardGameDetailView: View {
          repo: BGGDemoRepositoryService) {
         _viewModel = .init(wrappedValue: BoardGameDetailViewModel(gameID: game.id,
                                                                       repo: repo))
-
     }
     
     init(gameID: Int,

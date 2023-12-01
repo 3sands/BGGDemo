@@ -1,6 +1,6 @@
 //
 //  MinAgeView.swift
-//  
+//
 //
 //  Created by Trey on 11/9/23.
 //
@@ -19,20 +19,18 @@ public struct MinAgeView: View {
     }
     
     public var body: some View {
-        VStack {
-            if let minAge = game.minAge {
-                Label("\(minAge)+", systemImage: "figure.and.child.holdinghands")
-                    .padding(EdgeInsets(top: 1,
-                                        leading: 3,
-                                        bottom: 1,
-                                        trailing: 6))
-                    .font(.caption)
-                    .foregroundStyle(.primary)
-                    .background(RoundedRectangle(cornerRadius: 6)
-                        .fill(Color.lightKhaki)
-                        .shadow(radius: 3)
-                    )
-            }
+        if let minAge = game.minAge {
+            Label("\(minAge)+", systemImage: "figure.and.child.holdinghands")
+                .padding(EdgeInsets(top: 1,
+                                    leading: 3,
+                                    bottom: 1,
+                                    trailing: 6))
+                .font(.caption)
+                .foregroundStyle(.primary)
+                .background(RoundedRectangle(cornerRadius: 6)
+                    .fill(Color.lightKhaki)
+                    .shadow(radius: 3)
+                )
         }
     }
     

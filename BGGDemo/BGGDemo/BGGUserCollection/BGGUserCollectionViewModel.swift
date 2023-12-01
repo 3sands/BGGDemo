@@ -27,6 +27,8 @@ class BGGUserCollectionViewModel: ObservableObject {
         case error
     }
 
+    // TODO: save user collection OR save username and/or make the call each time
+    
     init(initialData: UserCollection? = nil,
          repo: BGGDemoRepositoryService) {
         self.repo = repo
