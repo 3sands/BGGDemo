@@ -46,6 +46,8 @@ struct BoardGameDetailView: View {
                 
                 // TODO: Add in link to bgg website itself
                 // TODO: add in a share button to share the game's ID with another user?
+                // TODO: Add button to show statistics using SwiftUI's graph view and the available stats for the user polls on age and language dependency and number of players
+                // TODO: Show other titles
 
                 Spacer()
             }

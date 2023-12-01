@@ -32,6 +32,18 @@ public struct BoardGame: Identifiable {
     public let avePlaytime: Int?
     public let minAge: Int?
     public let averageCommunityRating: Float?
+    // TODO: Add [BG Category]
+    // TODO: Add [BG Mechanic]
+    // TODO: Add [BG Family]
+    // TODO: Add [BG Expansions] (Can also then add in buttons to navigate to their detail page)
+    // TODO: Add [BG Accessory] (Can also then add in buttons to navigate to their detail page)
+    // TODO: Add [BG Implementation]
+    // TODO: Add [boardgamedesigner]
+    // TODO: Add [boardgameartist]
+    // TODO: Add [boardgamepublisher]
+    // TODO: Add suggested player age poll statistics
+    // TODO: Add language dependence poll statistics
+    // TODO: Add suggested number of players poll statistics
     
     public init(id: Int,
                 titles: [String],
