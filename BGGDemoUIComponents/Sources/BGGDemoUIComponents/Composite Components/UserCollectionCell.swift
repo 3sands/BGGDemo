@@ -11,13 +11,17 @@ import SwiftUI
 // View for the Board Game Search Result Cell
 public struct UserCollectionCell: View {
     public var body: some View {
-        VStack(alignment: .leading) {
-            thumbnailHeaderView
+        HStack {
+            VStack(alignment: .leading) {
+                thumbnailHeaderView
+                
+                UserCollectionGameStatusesView(game,
+                                               numberOfColumns: 3)
+                
+                UserCollectionBoardGameCommentView(game)
+            }
             
-            UserCollectionGameStatusesView(game,
-                                           numberOfColumns: 3)
-            
-            UserCollectionBoardGameCommentView(game)
+            Spacer()
         }
         .padding()
         .overlay(RoundedRectangle(cornerRadius: 10)

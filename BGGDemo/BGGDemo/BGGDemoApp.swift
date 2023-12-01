@@ -16,7 +16,6 @@ struct BGGDemoApp: App {
     init() {
         do {
             let schema = Schema([
-                Item.self,
                 BoardGameDataObject.self,
                 BoardGameExpansionDataObject.self
             ])

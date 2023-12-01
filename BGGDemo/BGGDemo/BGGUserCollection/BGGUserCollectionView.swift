@@ -52,6 +52,6 @@ struct BGGUserCollectionView: View {
 }
 
 #Preview {
-    let container = try! ModelContainer(for: Item.self, configurations: .init(for: Item.self, isStoredInMemoryOnly: true))
+    let container = try! ModelContainer(for: BoardGameDataObject.self, configurations: .init(for: BoardGameDataObject.self, isStoredInMemoryOnly: true))
     return BGGUserCollectionView(viewModel: BGGUserCollectionViewModel(initialData: previewUserCollection, repo: BGGDemoRepositories(modelContext: container.mainContext)))
 }
