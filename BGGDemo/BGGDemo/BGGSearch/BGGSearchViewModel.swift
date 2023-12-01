@@ -21,7 +21,7 @@ class BGGSearchViewModel: ObservableObject {
     @Published var searchTerm: String = ""
     
     // output
-    @Published private(set) var boardGameResults: SearchState = .noResults
+    @Published private(set) var boardGameResults: SearchState = .emptySearchTerm
     
     enum SearchState {
         case noResults

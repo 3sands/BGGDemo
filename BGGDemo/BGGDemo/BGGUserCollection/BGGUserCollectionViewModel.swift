@@ -19,7 +19,7 @@ class BGGUserCollectionViewModel: ObservableObject {
     @Published var userName: String = ""
     
     // output
-    @Published private(set) var collectionResults: SearchState = .noResults
+    @Published private(set) var collectionResults: SearchState = .emptySearchTerm
     
     enum SearchState {
         case emptySearchTerm
