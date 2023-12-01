@@ -1,5 +1,9 @@
-// The Swift Programming Language
-// https://docs.swift.org/swift-book
+//
+//  BGGNetworker.swift
+//
+//
+//  Created by Trey on 12/1/23.
+//
 
 import BGGDemoUtilities
 import SWXMLHash
@@ -14,19 +18,29 @@ public class BGGNetworker: BGGNetworkingService {
             throw CustomErrors.missingSearchForQueryURL
         }
         
+        // get the data from the url
         let (data, _) = try await URLSession.shared.data(from: url)
 
+        // Convert data to xml string result
         guard let resultXMLString = String(data: data, encoding: .utf8) else {
             throw CustomErrors.cannotConvertSearchResultIntoXMLString
         }
 
+        // Use XMLHash to parse XML string into something usable
         let resultXML = XMLHash.parse(resultXMLString)
+        
+        // Check for results total. If there are 0, then need to return early. Otherwise, error will throw when trying to get the items
+        let resultsTotal: Int = try resultXML[XMLDecodingStrings.items.rawValue].value(ofAttribute: XMLDecodingStrings.total.rawValue)
+        guard resultsTotal > 0 else {
+            return BGGSearchResponse(query: query, items: [])
+        }
+
         // BGG has an annoying API where the initial search results only return the title and the ID, no other info.
         // Need to do another call with all the IDs in this result to get the other results.
         // Will then need to do image thumbnails
-        let results: [BGGSearchResponseItem] = try resultXML[XMLDecodingStrings.items.rawValue][XMLDecodingStrings.item.rawValue].value()
+        let items: [BGGSearchResponseItem] = try resultXML[XMLDecodingStrings.items.rawValue][XMLDecodingStrings.item.rawValue].value()
         
-        return BGGSearchResponse(query: query, items: results)
+        return BGGSearchResponse(query: query, items: items)
     }
     
     public func search(geeksite: GeekSite, forIds ids: [Int], withStats: Bool) async throws -> [BGGThing] {
@@ -44,11 +58,17 @@ public class BGGNetworker: BGGNetworkingService {
             throw CustomErrors.missingSearchForIdsURL
         }
         
+        // Get the games data from url
         let (gamesData, _) = try await URLSession.shared.data(from: newURL)
+        
+        // Convert data to xml string result
         guard let gamesXMLString = String(data: gamesData, encoding: .utf8) else {
             throw CustomErrors.cannotConvertSearchIdsResultIntoXMLString
         }
+        
+        // Parse the XML String into something usable
         let gameXMLHash = XMLHash.parse(gamesXMLString)
+        
         // convert XML into the BGGThings to be displayed
         let bggThings: [BGGThing] = try gameXMLHash[XMLDecodingStrings.items.rawValue][XMLDecodingStrings.item.rawValue].value()
 
@@ -56,21 +76,21 @@ public class BGGNetworker: BGGNetworkingService {
     }
 
     public func search(geeksite: GeekSite, forQuery query: String, withStats: Bool) async throws -> [BGGThing] {
-        // Make the url of the initial search for query, download the data, and attempt to parse into xml
+        // Make the url of the initial search for query
         guard let url = Endpoint.search(geekSite: geeksite, query: query).url else {
             throw CustomErrors.missingSearchForQueryURL
         }
         
+        // Get the initial search result data from the url
         let (data, _) = try await URLSession.shared.data(from: url)
 
+        // Convert intial search result data to xml string result
         guard let resultXMLString = String(data: data, encoding: .utf8) else {
             throw CustomErrors.cannotConvertSearchResultIntoXMLString
         }
 
+        // Parse the XML String into something usable
         let resultXML = XMLHash.parse(resultXMLString)
-        // split this function up
-        
-        
         
         // BGG has an annoying API where the initial search results only return the title and the ID, no other info.
         // Need to do another call with all the IDs in this result to get the other results.
@@ -86,10 +106,15 @@ public class BGGNetworker: BGGNetworkingService {
             throw CustomErrors.missingSearchForIdsURL
         }
         
+        // Get the games detail result data from the url
         let (gamesData, _) = try await URLSession.shared.data(from: newURL)
+        
+        // Convert games detail result data to xml string result
         guard let gamesXMLString = String(data: gamesData, encoding: .utf8) else {
             throw CustomErrors.cannotConvertSearchIdsResultIntoXMLString
         }
+        
+        // Parse the XML String into something usable
         let gameXMLHash = XMLHash.parse(gamesXMLString)
         // convert XML into the BGGThings to be displayed
         let bggThings: [BGGThing] = try gameXMLHash[XMLDecodingStrings.items.rawValue][XMLDecodingStrings.item.rawValue].value()
@@ -104,8 +129,9 @@ public class BGGNetworker: BGGNetworkingService {
         // make a 2nd call asking for subtype=boardgameexpansion
         
         // Make the call for only the boardGames
-        
+        // Need to do 3 delayed retries while the BGG backend processes our request
         for _ in 0..<3 {
+            // Make the url of the initial search for user, download the data, and attempt to parse into xml
             guard let url = Endpoint.userCollection(geekSite: .boardGame, userName: userName, withExpansions: false).url else {
                 throw CustomErrors.missingUserNameURL
             }
@@ -139,7 +165,6 @@ public class BGGNetworker: BGGNetworkingService {
             let results: [UserCollectionThing] = try resultXML[XMLDecodingStrings.items.rawValue][XMLDecodingStrings.item.rawValue].value()
 
             // TODO make the call the expansions
-            
             return UserCollection(userName: userName, collection: results)
         }
         
