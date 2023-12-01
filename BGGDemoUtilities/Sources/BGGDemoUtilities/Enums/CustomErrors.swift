@@ -1,5 +1,5 @@
 //
-//  File.swift
+//  CustomErrors.swift
 //  
 //
 //  Created by Trey on 10/25/23.
@@ -15,4 +15,7 @@ public enum CustomErrors: Error {
     case missingSearchForIdsURL
     case wrongDataFromSearch
     case cannotGetTypeFromXML
+    case missingUserNameURL
+    case userCollectionRetry
+    case userCollectionFailed
 }

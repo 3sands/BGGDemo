@@ -17,6 +17,10 @@ struct MainTabView: View {
                 .tabItem {
                     Label("Search", systemImage: "magnifyingglass")
                 }
+            BGGUserCollectionView(viewModel: BGGUserCollectionViewModel(repo: repo))
+                .tabItem {
+                    Label("Collection", systemImage: "archivebox")
+                }
         }
     }
 }

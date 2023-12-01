@@ -1,5 +1,5 @@
 //
-//  File.swift
+//  Endpoint.swift
 //  
 //
 //  Created by Trey on 10/25/23.
@@ -37,6 +37,23 @@ extension Endpoint {
                 URLQueryItem(name: "stats", value: withStats ? "1" : nil)
             ]
         )
+    }
+    
+    static func userCollection(geekSite: GeekSite,
+                               userName: String,
+                               withExpansions: Bool) -> Endpoint {
+        // FROM BGG: Note that the default (or using subtype=boardgame) returns both boardgame and boardgameexpansion's in your collection...
+        // but incorrectly gives subtype=boardgame for the expansions. Workaround is to use excludesubtype=boardgameexpansion and
+        // make a 2nd call asking for subtype=boardgameexpansion
+        let expansionQueryItemName = withExpansions ? "subtype" : "excludesubtype"
+
+        return Endpoint(geekSite: geekSite,
+                        path: "/xmlapi2/collection",
+                        queryItems: [
+                            URLQueryItem(name: "username", value: userName),
+                            URLQueryItem(name: expansionQueryItemName, value: "boardgameexpansion"),
+                            URLQueryItem(name: "stats", value: "1")
+                        ])
     }
 }
 

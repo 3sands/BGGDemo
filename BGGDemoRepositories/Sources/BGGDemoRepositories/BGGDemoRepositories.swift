@@ -1,5 +1,9 @@
-// The Swift Programming Language
-// https://docs.swift.org/swift-book
+//
+//  BGGDemoRepositories.swift
+//
+//
+//  Created by Trey on 11/9/23.
+//
 
 import BGGDemoNetworking
 import BGGDemoUtilities
@@ -38,12 +42,23 @@ public final class BGGDemoRepositories: BGGDemoRepositoryService {
     
     public func bggItem(forId id: Int) async throws -> BGGThing? {
         // if exists in cache, use it
-        for fetcher: any Fetcher in [BoardGameExpansionFetcher(), BoardGameFetcher()] {
+        for fetcher: any SwiftDataFetcher in [BoardGameExpansionFetcher(), BoardGameFetcher()] {
             if let bggThing = fetcher.fetch(modelContext: modelContext, id: id) {
                 return bggThing
             }
         }
         
         return try await networking.search(geeksite: .boardGame, forIds: [id], withStats: true).first
+    }
+    
+    public func collection(forUserName userName: String) async throws -> UserCollection {
+        // if exists in cache, use it
+//        for fetcher: any Fetcher in [BoardGameExpansionFetcher(), BoardGameFetcher()] {
+//            if let bggThing = fetcher.fetch(modelContext: modelContext, id: id) {
+//                return bggThing
+//            }
+//        }
+        
+        return try await networking.retrieveUserCollection(geeksite: .boardGame, forUserName: userName)
     }
 }

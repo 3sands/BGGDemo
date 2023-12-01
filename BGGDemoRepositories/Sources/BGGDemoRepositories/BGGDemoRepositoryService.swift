@@ -1,5 +1,5 @@
 //
-//  File.swift
+//  BGGDemoRepositoryService.swift
 //  
 //
 //  Created by Trey on 11/9/23.
@@ -12,4 +12,5 @@ import BGGDemoUtilities
 public protocol BGGDemoRepositoryService {
     func bggItems(from geekSite: GeekSite, forSearchQuery query: String, withStats: Bool) async throws -> [BGGThing]
     func bggItem(forId id: Int) async throws -> BGGThing?
+    func collection(forUserName userName: String) async throws -> UserCollection
 }

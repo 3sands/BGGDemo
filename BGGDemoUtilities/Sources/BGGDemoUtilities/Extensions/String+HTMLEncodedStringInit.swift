@@ -1,13 +1,13 @@
 //
-//  String+Extensions.swift
-//  BGGDemo
+//  String+HTMLEncodedStringInit.swift
 //
-//  Created by Trey on 11/9/23.
+//
+//  Created by Trey on 12/1/23.
 //
 
 import Foundation
 
-extension String {
+public extension String {
     init?(htmlEncodedString: String?) {
         guard let htmlEncodedString else {
             return nil

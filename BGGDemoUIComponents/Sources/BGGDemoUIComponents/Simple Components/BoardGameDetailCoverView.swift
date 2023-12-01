@@ -1,5 +1,5 @@
 //
-//  SwiftUIView.swift
+//  BoardGameDetailCoverView.swift
 //  
 //
 //  Created by Trey on 11/29/23.
@@ -12,7 +12,7 @@ import BGGDemoUtilities
 public struct BoardGameDetailCoverView: View {
     public var body: some View {
         AsyncImage(
-            url: URL(string: game.imageURL ?? ""),
+            url: URL(string: game.imageURLString),
             content: { image in
                 image.resizable()
                     .aspectRatio(contentMode: .fit)

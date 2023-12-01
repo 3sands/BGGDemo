@@ -1,6 +1,6 @@
 //
-//  File.swift
-//  
+//  BGGThing.swift
+//
 //
 //  Created by Trey on 10/25/23.
 //

@@ -1,5 +1,5 @@
 //
-//  File.swift
+//  SwiftDataDataObjects.swift
 //  
 //
 //  Created by Trey on 11/9/23.
@@ -64,9 +64,9 @@ public class BoardGameDataObject {
     /// Main title on BGG
     public let mainTitle: String
     
-    public let imageURL: String?
+    public let imageURLString: String?
     
-    public let thumbnailURL: String?
+    public let imageThumbnailURLString: String?
     public let minPlayers: Int?
     public let maxPlayers: Int?
     public let yearPublished: Int?
@@ -75,14 +75,27 @@ public class BoardGameDataObject {
     public let maxPlaytime: Int?
     public let avePlaytime: Int?
     public let minAge: Int?
-    public let averageRating: Float?
+    public let averageCommunityRating: Float?
     
-    public init(id: Int, titles: [String], mainTitle: String, imageURL: String?, thumbnailURL: String?, minPlayers: Int?, maxPlayers: Int?, yearPublished: Int?, descriptionText: String?, minPlaytime: Int?, maxPlaytime: Int?, avePlaytime: Int?, minAge: Int?, averageRating: Float?) {
+    public init(id: Int, 
+                titles: [String],
+                mainTitle: String,
+                imageURLString: String?,
+                imageThumbnailURLString: String?,
+                minPlayers: Int?,
+                maxPlayers: Int?,
+                yearPublished: Int?,
+                descriptionText: String?,
+                minPlaytime: Int?,
+                maxPlaytime: Int?,
+                avePlaytime: Int?,
+                minAge: Int?,
+                averageCommunityRating: Float?) {
         self.bggId = id
         self.titles = titles
         self.mainTitle = mainTitle
-        self.imageURL = imageURL
-        self.thumbnailURL = thumbnailURL
+        self.imageURLString = imageURLString
+        self.imageThumbnailURLString = imageThumbnailURLString
         self.minPlayers = minPlayers
         self.maxPlayers = maxPlayers
         self.yearPublished = yearPublished
@@ -91,15 +104,15 @@ public class BoardGameDataObject {
         self.maxPlaytime = maxPlaytime
         self.avePlaytime = avePlaytime
         self.minAge = minAge
-        self.averageRating = averageRating
+        self.averageCommunityRating = averageCommunityRating
     }
     
     public init(game: BoardGame) {
         self.bggId = game.id
         self.titles = game.titles
         self.mainTitle = game.mainTitle
-        self.imageURL = game.imageURL
-        self.thumbnailURL = game.thumbnailURL
+        self.imageURLString = game.imageURLString
+        self.imageThumbnailURLString = game.imageThumbnailURLString
         self.minPlayers = game.minPlayers
         self.maxPlayers = game.maxPlayers
         self.yearPublished = game.yearPublished
@@ -108,7 +121,7 @@ public class BoardGameDataObject {
         self.maxPlaytime = game.maxPlaytime
         self.avePlaytime = game.avePlaytime
         self.minAge = game.minAge
-        self.averageRating = game.averageRating
+        self.averageCommunityRating = game.averageCommunityRating
     }
 }
 
@@ -118,12 +131,21 @@ protocol SwiftDataObjectMakeable {
 
 extension BoardGameDataObject: HasBGGThing {
     
-    var boardGameNew: BoardGameNew {
-        BoardGameNew(id: self.bggId, titles: self.titles, mainTitle: self.mainTitle, imageURL: self.imageURL, thumbnailURL: self.thumbnailURL, playersNumber: PlayersNumber(minimum: self.minPlayers, maximum: self.maxPlayers), yearPublished: self.yearPublished, descriptionText: self.descriptionText, playtime: Playtime(minimum: self.minPlaytime, maximum: self.maxPlaytime, average: self.avePlaytime), minAge: self.minAge, averageRating: self.averageRating)
-    }
-    
     var boardGame: BoardGame {
-        BoardGame(id: self.bggId, titles: self.titles, mainTitle: self.mainTitle, imageURL: self.imageURL, thumbnailURL: self.thumbnailURL, minPlayers: self.minPlayers, maxPlayers: self.maxPlayers, yearPublished: self.yearPublished, descriptionText: self.descriptionText, minPlaytime: self.minPlaytime, maxPlaytime: self.maxPlaytime, avePlaytime: self.avePlaytime, minAge: self.minAge, averageRating: self.averageRating)
+        BoardGame(id: self.bggId, 
+                  titles: self.titles,
+                  mainTitle: self.mainTitle,
+                  imageURLString: self.imageURLString,
+                  imageThumbnailURLString: self.imageThumbnailURLString,
+                  minPlayers: self.minPlayers,
+                  maxPlayers: self.maxPlayers,
+                  yearPublished: self.yearPublished,
+                  descriptionText: self.descriptionText,
+                  minPlaytime: self.minPlaytime, 
+                  maxPlaytime: self.maxPlaytime,
+                  avePlaytime: self.avePlaytime,
+                  minAge: self.minAge,
+                  averageCommunityRating: self.averageCommunityRating)
     }
     
     var bggThing: BGGThing {

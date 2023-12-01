@@ -1,5 +1,5 @@
 //
-//  SwiftUIView.swift
+//  BoardGameSearchResultCell.swift
 //
 //
 //  Created by Trey on 10/26/23.
@@ -12,24 +12,19 @@ import SwiftUI
 public struct BoardGameSearchResultCell: View {
     public var body: some View {
         HStack {
-            AsyncImage(url: URL(string: game.thumbnailURL ?? "")) { image in
-                image.image?.resizable()
-                    .aspectRatio(contentMode: .fit)
-                    .frame(width: 80, height: 80)
-            }
+            ThumbnailImageView(game)
             
             VStack(alignment: .leading) {
                 BoardGameTitleView(game)
                 
                 HStack {
                     PlayersNumberView(game)
-                    
                     MinAgeView(game)
                 }
                 
                 HStack {
-                    PlaytimeView(game)
-                    AverageRatingView(game)
+                    MinMixPlaytimeView(game)
+                    AverageCommunityRatingView(game)
                 }
             }
             

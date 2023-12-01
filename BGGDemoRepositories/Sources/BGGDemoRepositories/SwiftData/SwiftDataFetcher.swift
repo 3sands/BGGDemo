@@ -9,7 +9,7 @@ import BGGDemoUtilities
 import Foundation
 import SwiftData
 
-protocol Fetcher {
+protocol SwiftDataFetcher {
 //    associatedtype DataObject: HasBGGThing & PersistentModel
     
     func fetch(modelContext: ModelContext, id: Int) -> BGGThing?
@@ -41,7 +41,7 @@ protocol Fetcher {
 //    }
 //}
 
-struct BoardGameFetcher: Fetcher {
+struct BoardGameFetcher: SwiftDataFetcher {
 //    typealias DataObject = BoardGameDataObject
     
     func fetch(modelContext: ModelContext, id: Int) -> BGGThing? {
@@ -62,7 +62,7 @@ struct BoardGameFetcher: Fetcher {
     }
 }
 
-struct BoardGameExpansionFetcher: Fetcher {
+struct BoardGameExpansionFetcher: SwiftDataFetcher {
 //    typealias DataObject = BoardGameExpansionDataObject
     
     func fetch(modelContext: ModelContext, id: Int) -> BGGThing? {

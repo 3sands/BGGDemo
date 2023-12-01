@@ -1,5 +1,5 @@
 //
-//  TempView.swift
+//  BoardGameDetailView.swift
 //  BGGDemo
 //
 //  Created by Trey on 10/27/23.
@@ -32,8 +32,8 @@ struct BoardGameDetailView: View {
                     VStack(alignment: .leading) {
                         PlayersNumberView(game)
                         MinAgeView(game)
-                        PlaytimeView(game)
-                        AverageRatingView(game)
+                        MinMixPlaytimeView(game)
+                        AverageCommunityRatingView(game)
                     }
                     .padding()
                 }

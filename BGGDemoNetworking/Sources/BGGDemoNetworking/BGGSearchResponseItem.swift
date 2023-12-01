@@ -1,5 +1,5 @@
 //
-//  File.swift
+//  BGGSearchResponseItem.swift
 //  
 //
 //  Created by Trey on 10/26/23.

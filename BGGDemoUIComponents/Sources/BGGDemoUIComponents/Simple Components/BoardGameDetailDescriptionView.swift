@@ -1,5 +1,5 @@
 //
-//  SwiftUIView.swift
+//  BoardGameDetailDescriptionView.swift
 //  
 //
 //  Created by Trey on 11/29/23.
@@ -14,6 +14,7 @@ public struct BoardGameDetailDescriptionView: View {
         if let descriptionTextDecoded = game.descriptionTextDecoded {
             Text(descriptionTextDecoded)
                 .font(.caption)
+                .foregroundStyle(.primary)
                 .padding()
                 .background(RoundedRectangle(cornerRadius: 4)
                     .fill(Color.lightKhaki)

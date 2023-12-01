@@ -1,5 +1,5 @@
 //
-//  SwiftUIView.swift
+//  BoardGameDetailTitleView.swift
 //  
 //
 //  Created by Trey on 11/29/23.

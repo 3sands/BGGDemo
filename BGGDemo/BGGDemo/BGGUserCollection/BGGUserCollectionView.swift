@@ -1,8 +1,8 @@
 //
-//  BGGSearchView.swift
+//  BGGUserCollectionView.swift
 //  BGGDemo
 //
-//  Created by Trey on 10/24/23.
+//  Created by Trey on 11/29/23.
 //
 
 import Combine
@@ -12,28 +12,28 @@ import BGGDemoRepositories
 import BGGDemoUtilities
 import BGGDemoUIComponents
 
-struct BGGSearchView: View {
-    @StateObject var viewModel: BGGSearchViewModel
+struct BGGUserCollectionView: View {
+    @StateObject var viewModel: BGGUserCollectionViewModel
 
     var body: some View {
         NavigationStack {
-            switch viewModel.boardGameResults {
+            switch viewModel.collectionResults {
             case .noResults:
-                Text("Searching for \(viewModel.searchTerm) resulted in no results")
+                Text("No collection for the username \(viewModel.userName)")
                 
             case .results(let array):
                 // TODO: Add a way to filter on the results locally here
-                Text("Results: \(array.count)")
-                List(array) {
+                Text("Results: \(array.collection.count)")
+                List(array.collection) {
                     switch $0 {
                     case .boardGame(let game):
                         // TODO: update navigation
                         NavigationLink(
-                            destination: BoardGameDetailView(gameID: game.id,
+                            destination: BoardGameDetailView(gameID: game.bggId,
                                                              repo: viewModel.repo)
                         ) {
                             // TODO: Check for accessibility
-                            BoardGameSearchResultCell(game)
+                            UserCollectionCell(game)
                         }
                     default:
                         Text("NOOOPE")
@@ -44,14 +44,14 @@ struct BGGSearchView: View {
                 Text("Error")
             }
         }
-        .navigationTitle("BGGDemo")
-            .searchable(text: $viewModel.searchTerm)
-            .disableAutocorrection(true)
-            .textInputAutocapitalization(.never)
+        .navigationTitle("User Collection")
+        .searchable(text: $viewModel.userName)
+        .autocorrectionDisabled()
+        .textInputAutocapitalization(.never)
     }
 }
 
 #Preview {
     let container = try! ModelContainer(for: Item.self, configurations: .init(for: Item.self, isStoredInMemoryOnly: true))
-    return BGGSearchView(viewModel: BGGSearchViewModel(initialData: previewBGGThings, repo: BGGDemoRepositories(modelContext: container.mainContext)))
+    return BGGUserCollectionView(viewModel: BGGUserCollectionViewModel(initialData: previewUserCollection, repo: BGGDemoRepositories(modelContext: container.mainContext)))
 }
