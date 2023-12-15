@@ -9,7 +9,7 @@ import Foundation
 import UIKit
 
 /// Entity for a Board Game
-public struct BoardGame: Identifiable {
+public struct BoardGame: Identifiable, Hashable {
     /// ID on BGG
     public let id: Int
     

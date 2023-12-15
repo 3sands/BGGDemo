@@ -56,6 +56,8 @@ struct BoardGameDetailView: View {
                 Spacer()
             }
             .background(Color.khaki)
+            .navigationTitle(game.mainTitle)
+            .navigationBarTitleDisplayMode(.inline)
         }
     }
     

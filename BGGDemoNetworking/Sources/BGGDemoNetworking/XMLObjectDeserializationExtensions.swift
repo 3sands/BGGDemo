@@ -40,6 +40,7 @@ enum XMLDecodingStrings: String {
     case subtype
     case thumbnail
     case total
+    case totalitems
     case type
     case value
     case yearpublished

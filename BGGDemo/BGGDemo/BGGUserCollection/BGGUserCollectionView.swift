@@ -15,42 +15,13 @@ import BGGDemoUIComponents
 struct BGGUserCollectionView: View {
     var body: some View {
         NavigationStack {
-            switch viewModel.collectionResults {
-            case .emptySearchTerm:
-                Text("Enter a user name to view their collection")
-
-            case .noResults:
-                Text("No collection for the username \(viewModel.userName)")
-                
-            case .results(let array):
-                // TODO: Add a way to filter on the results locally here
-                // TODO: add in toggle for list vs grid display
-                // TODO: Add in a refresh button for user collection to get updated from website
-                Text("Results: \(array.collection.count)")
-                List(array.collection) {
-                    switch $0 {
-                    case .boardGame(let game):
-                        // TODO: update navigation
-                        NavigationLink(
-                            destination: BoardGameDetailView(gameID: game.bggId,
-                                                             repo: viewModel.repo)
-                        ) {
-                            // TODO: Check for accessibility
-                            UserCollectionCell(game)
-                        }
-                    default:
-                        Text("NOOOPE")
+            masterView
+                .navigationDestination(for: Route.self) { route in
+                    switch route {
+                    case .boardGameDetail(let gameID):
+                        BoardGameDetailView(gameID: gameID, repo: viewModel.repo)
                     }
                 }
-                .listStyle(.plain)
-
-            case .error(let error):
-                if let customError = error as? CustomErrors {
-                    Text("Error: \(customError.displayText)")
-                } else {
-                    Text("Unknown error occurred")
-                }
-            }
         }
         // TODO: customize the search bar and nav bar to look nice
         .navigationTitle("User Collection")
@@ -64,6 +35,52 @@ struct BGGUserCollectionView: View {
         _viewModel = .init(wrappedValue: BGGUserCollectionViewModel(initialData: initialData,
                                                                       repo: repo))
 
+    }
+    
+    private var masterView: some View {
+        return VStack {
+            switch viewModel.collectionResults {
+            case .emptySearchTerm:
+                Text("Enter a user name to view their collection")
+                
+            case .noResults:
+                Text("No collection for the username \(viewModel.userName)")
+                
+            case .results(let array):
+                // TODO: Add a way to filter on the results locally here
+                // TODO: add in toggle for list vs grid display
+                // TODO: Add in a refresh button for user collection to get updated from website
+                Text("Results: \(array.collection.count)")
+                List(array.collection) {
+                    switch $0 {
+                    case .boardGame(let game):
+                        // TODO: update navigation
+                        
+                        NavigationLink(value: Route.boardGameDetail(gameID: game.bggId)) {
+                            // TODO: Check for accessibility
+                            UserCollectionCell(game)
+                        }
+                        //                        NavigationLink(
+                        //                            destination: BoardGameDetailView(gameID: game.bggId,
+                        //                                                             repo: viewModel.repo)
+                        //                        ) {
+                        //                            // TODO: Check for accessibility
+                        //                            UserCollectionCell(game)
+                        //                        }
+                    default:
+                        Text("NOOOPE")
+                    }
+                }
+                .listStyle(.plain)
+                
+            case .error(let error):
+                if let customError = error as? CustomErrors {
+                    Text("Error: \(customError.displayText)")
+                } else {
+                    Text("Unknown error occurred")
+                }
+            }
+        }
     }
     
     @StateObject private var viewModel: BGGUserCollectionViewModel

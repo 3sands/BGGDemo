@@ -20,8 +20,10 @@ struct BGGSearchView: View {
             switch viewModel.boardGameResults {
             case .emptySearchTerm:
                 Text("Enter a search term for a board game")
+                    .navigationTitle("Empty Search Term")
             case .noResults:
                 Text("Searching for \(viewModel.searchTerm) resulted in no results")
+                    .navigationTitle("No Results")
                 
             case .results(let array):
                 // TODO: Add a way to filter on the results locally here
@@ -43,16 +45,19 @@ struct BGGSearchView: View {
                     }
                 }
                 .listStyle(.plain)
+                .navigationTitle("Results")
             case .error(let error):
                 if let customError = error as? CustomErrors {
                     Text("Error: \(customError.displayText)")
+                        .navigationTitle("Error")
                 } else {
                     Text("Unknown error occurred")
+                        .navigationTitle("Error")
                 }
+                   
             }
         }
         // TODO: customize the search bar and nav bar to look nice
-        .navigationTitle("BGGDemo")
             .searchable(text: $viewModel.searchTerm)
             .disableAutocorrection(true)
             .textInputAutocapitalization(.never)

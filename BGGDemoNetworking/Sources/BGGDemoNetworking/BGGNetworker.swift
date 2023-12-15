@@ -177,7 +177,7 @@ public class BGGNetworker: BGGNetworkingService {
             }
             
             // Check for results total. If there are 0, then need to return early. Otherwise, error will throw when trying to get the items
-            let resultsTotal: Int = try resultXML[XMLDecodingStrings.items.decodeKey].value(ofAttribute: XMLDecodingStrings.total.decodeKey)
+            let resultsTotal: Int = try resultXML[XMLDecodingStrings.items.decodeKey].value(ofAttribute: XMLDecodingStrings.totalitems.decodeKey)
             guard resultsTotal > 0 else {
                 // TODO: need to adjust this when doing the board game expansion, because that request also could NOT be empty
                 return UserCollection(userName: userName, collection: [])
